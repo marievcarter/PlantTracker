@@ -3,7 +3,7 @@ import React from 'react';
 const Root = () => {
   return (
     <div>
-      <nav>Start Here</nav>
+      <nav>PLANT TRACKER</nav>
       <main />
     </div>
   );
