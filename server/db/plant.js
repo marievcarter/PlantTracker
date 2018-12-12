@@ -6,6 +6,7 @@ const Plant = db.define('plant', {
   commonName: {
     type: Sequelize.STRING,
   },
+  imageUrl: Sequelize.STRING,
   scientificName: Sequelize.STRING,
   age: Sequelize.INTEGER,
 });
