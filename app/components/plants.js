@@ -11,7 +11,7 @@ class Plants extends Component {
   render() {
     return (
       <div>
-        <h1 className="title">All Plants</h1>
+        <h1 className="title">Plant Collection</h1>
         <div className="flex-container">
           {/* <aside>
             <ConnectedAddCampus className="flex-item-add" />
@@ -21,15 +21,10 @@ class Plants extends Component {
               {this.props.plants.map(plant => {
                 return (
                   <div key={plant.id} className="profile">
-                    <p>{plant.commonName}</p>
-                    <img src={plant.imageUrl} />
-                    {/* <NavLink
-                      key={plant.id}
-                      to={`/plants/${plant.id}`}
-                      className="navlink"
-                    >
-                      <h3 className="link">{plant.name}</h3>
-                    </NavLink> */}
+                    <NavLink to={`/plants/${plant.id}`} className="navlink">
+                      <p className="link">{plant.commonName}</p>
+                      <img src={plant.imageUrl} />
+                    </NavLink>
                   </div>
                 );
               })}
