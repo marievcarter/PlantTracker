@@ -17,9 +17,19 @@ router.get('/:plantId', async (req, res, next) => {
   try {
     const plant = await Plant.findAll({
       where: { id: req.params.plantId },
-      include: PlantDetail,
+      //include: PlantDetail,
     });
     res.status(200).json(plant);
+  } catch (err) {
+    next(err);
+  }
+});
+
+//POST api/plants
+router.post('/', async (req, res, next) => {
+  try {
+    const newPlant = await Plant.create(req.body);
+    res.json(newPlant);
   } catch (err) {
     next(err);
   }

@@ -9,6 +9,11 @@ const Plant = db.define('plant', {
   imageUrl: Sequelize.STRING,
   scientificName: Sequelize.STRING,
   age: Sequelize.INTEGER,
+  purchaseLocation: Sequelize.STRING,
+  sunDirection: Sequelize.STRING,
+  lastWatering: Sequelize.DATEONLY,
+  lastFeeding: Sequelize.DATEONLY,
+  lastRepot: Sequelize.DATEONLY,
 });
 
 module.exports = { Plant, db };

@@ -20,29 +20,28 @@ class SinglePlant extends Component {
                 <span>Age: </span>
                 {`${this.props.plant.age} years`}
               </p>
-              {this.props.plant.plantDetail === undefined ||
+              {/* {this.props.plant.plantDetail === undefined ||
               this.props.plant.plantDetail === {} ? (
                 'No details to show!'
               ) : (
-                <div>
-                  <p>
-                    <span>Sun Exposure: </span>
-                    {this.props.plant.plantDetail.sunDirection}
-                  </p>
-                  <p>
-                    <span>Last Watering: </span>
-                    {this.props.plant.plantDetail.lastWatering}
-                  </p>
-                  <p>
-                    <span>Last Feeding: </span>
-                    {this.props.plant.plantDetail.lastFeeding}
-                  </p>
-                  <p>
-                    <span>Last Repot: </span>
-                    {this.props.plant.plantDetail.lastRepot}
-                  </p>
-                </div>
-              )}
+                <div>hi</div>
+              )} */}
+              <p>
+                <span>Sun Exposure: </span>
+                {this.props.plant.sunDirection}
+              </p>
+              <p>
+                <span>Last Watering: </span>
+                {this.props.plant.lastWatering}
+              </p>
+              <p>
+                <span>Last Feeding: </span>
+                {this.props.plant.lastFeeding}
+              </p>
+              <p>
+                <span>Last Repot: </span>
+                {this.props.plant.lastRepot}
+              </p>
             </div>
           </div>
         </main>

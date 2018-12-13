@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchPlants } from '../reducers/plantReducer.js';
+import AddPlant from './addPlant.js';
 
 class Plants extends Component {
   componentDidMount() {
@@ -12,9 +13,12 @@ class Plants extends Component {
     return (
       <div>
         <h1 className="title">Plant Collection</h1>
+        <NavLink to={'/plants/addPlant'}>
+          <button>+ Add Plant</button>
+        </NavLink>
         <div className="flex-container">
           {/* <aside>
-            <ConnectedAddCampus className="flex-item-add" />
+            <AddPlant className="flex-item-add" />
           </aside> */}
           <main className="flex-container">
             <div className="flex-container-items flex-item-profiles">

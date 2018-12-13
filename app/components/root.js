@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import Plants from './plants.js';
 import SinglePlant from './singlePlant.js';
+import AddPlant from './addPlant.js';
 
 const Root = () => {
   return (
@@ -16,6 +17,7 @@ const Root = () => {
       </nav>
       <main>
         <Switch>
+          <Route exact path="/plants/addPlant" component={AddPlant} />
           <Route path="/plants/:plantId" component={SinglePlant} />
           <Route path="/plants" component={Plants} />
         </Switch>
