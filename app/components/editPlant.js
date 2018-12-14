@@ -21,7 +21,6 @@ class EditPlant extends Component {
 
   // understand why refreshing causes selected plant data to be lost
   render() {
-    console.log(this.props);
     return (
       <div>
         <main>
@@ -43,24 +42,20 @@ class EditPlant extends Component {
               />
               <br />
               <p>Image:</p>
-              <input
-                type="text"
-                name="imageUrl"
-                placeholder="https://via.placeholder.com/150"
-              />
+              <input type="text" name="imageUrl" value={this.state.imageUrl} />
               <br />
               <p>Age (years):</p>
-              <input type="text" name="age" placeholder="3" />
+              <input type="text" name="age" value={this.state.age} />
               <br />
               <p>Purchase Location:</p>
               <input
                 type="text"
                 name="purchaseLocation"
-                placeholder="Home Depot"
+                value={this.state.purchaseLocation}
               />
               <br />
               <p>Sun Direction:</p>
-              <select type="text" name="sunDirection">
+              <select type="text" value={this.state.sunDirection}>
                 <option>North</option>
                 <option>South</option>
                 <option>East</option>
@@ -72,13 +67,25 @@ class EditPlant extends Component {
               </select>
               <br />
               <p>Last Watering:</p>
-              <input type="text" name="lastWatering" placeholder="2/3/2018" />
+              <input
+                type="text"
+                name="lastWatering"
+                value={this.state.lastWatering}
+              />
               <br />
               <p>Last Feeding:</p>
-              <input type="text" name="lastFeeding" placeholder="2/3/2018" />
+              <input
+                type="text"
+                name="lastFeeding"
+                value={this.state.lastFeeding}
+              />
               <br />
               <p>Last Repot:</p>
-              <input type="text" name="lastRepot" placeholder="2/3/2018" />
+              <input
+                type="text"
+                name="lastRepot"
+                value={this.state.lastRepot}
+              />
               <br />
               <button type="submit">Submit</button>
             </form>

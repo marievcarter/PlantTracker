@@ -4,6 +4,7 @@ import Axios from 'axios';
 const GOT_PLANTS_FROM_SERVER = 'GOT_PLANTS_FROM_SERVER';
 const GOT_PLANT_FROM_SERVER = 'GOT_PLANT_FROM_SERVER';
 const GOT_NEW_PLANT = 'GOT_NEW_PLANT';
+const REMOVED_PLANT = 'REMOVED_PLANT';
 
 // define action creators
 const gotPlants = plants => ({
@@ -19,6 +20,11 @@ const gotOnePlant = plant => ({
 const gotNewPlant = plant => ({
   type: GOT_NEW_PLANT,
   plant,
+});
+
+const removedPlant = plantId => ({
+  type: REMOVED_PLANT,
+  plantId,
 });
 
 // thunk creators
@@ -39,6 +45,11 @@ export const createNewPlant = plant => async dispatch => {
   dispatch(gotNewPlant(plant));
 };
 
+export const deletePlant = plantId => async dispatch => {
+  const res = await Axios.delete(`/api/plants/${plantId}`);
+  dispatch(removedPlant(plantId));
+};
+
 // initial state plants
 const initialState = { plants: [], selectedPlant: {} };
 
@@ -50,6 +61,15 @@ export const plantReducer = (state = initialState, action) => {
       return { ...state, selectedPlant: action.plant };
     case GOT_NEW_PLANT:
       return { ...state, plants: [...state.plants, action.plant] };
+    case REMOVED_PLANT:
+      return {
+        ...state,
+        plants: [
+          ...state.plants.filter(plant => {
+            return plant.id !== action.plantId;
+          }),
+        ],
+      };
     default:
       return state;
   }

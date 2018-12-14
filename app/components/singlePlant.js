@@ -1,15 +1,24 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchOnePlant } from '../reducers/plantReducer.js';
+import { fetchOnePlant, deletePlant } from '../reducers/plantReducer.js';
 
 class SinglePlant extends Component {
+  constructor() {
+    super();
+  }
+
   componentDidMount() {
     this.props.loadPlants(this.props.match.params.plantId);
   }
 
+  handleDelete(plantId) {
+    // delete plant from database
+    event.preventDefault();
+    this.props.deletePlant(plantId);
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div>
         <main>
@@ -21,12 +30,6 @@ class SinglePlant extends Component {
                 <span>Age: </span>
                 {`${this.props.plant.age} years`}
               </p>
-              {/* {this.props.plant.plantDetail === undefined ||
-              this.props.plant.plantDetail === {} ? (
-                'No details to show!'
-              ) : (
-                <div>hi</div>
-              )} */}
               <p>
                 <span>Sun Exposure: </span>
                 {this.props.plant.sunDirection}
@@ -47,6 +50,9 @@ class SinglePlant extends Component {
             <NavLink to={'/plants/editPlant'}>
               <button>Edit</button>
             </NavLink>
+            <button onClick={this.handleDelete.bind(this, this.props.plant.id)}>
+              Delete
+            </button>
           </div>
         </main>
       </div>
@@ -58,6 +64,7 @@ const mapStateToProps = state => ({ plant: state.plants.selectedPlant });
 
 const mapDispatchToProps = dispatch => ({
   loadPlants: plantId => dispatch(fetchOnePlant(plantId)),
+  deletePlant: plantId => dispatch(deletePlant(plantId)),
 });
 
 export default withRouter(

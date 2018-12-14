@@ -35,4 +35,15 @@ router.post('/', async (req, res, next) => {
   }
 });
 
+// DELETE /api/plants/plantId
+router.delete('/:plantId', async (req, res, next) => {
+  try {
+    id = req.params.plantId;
+    await Plant.destroy({ where: { id } });
+    res.sendStatus(204);
+  } catch (err) {
+    next(err);
+  }
+});
+
 module.exports = router;
