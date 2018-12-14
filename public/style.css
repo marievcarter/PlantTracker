@@ -78,7 +78,7 @@ img {
 .flex-container {
   display: flex;
   padding: 0px 30px 0px 30px;
-  width: 90%;
+  width: 100%;
 }
 
 .flex-item-add {
@@ -94,11 +94,12 @@ img {
   display: flex;
   order: 2;
   flex-wrap: wrap;
+  align-content: center;
 }
 
 .profile {
   display: flex;
-  flex: 0 0 40%;
+  flex: 0 0 45%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -109,8 +110,9 @@ img {
   border-radius: 10px;
 }
 
-.profile img {
-  padding: 0 0 10px 0;
+.profile-pic {
+  width: 50%;
+  height: auto;
 }
 
 .profile .link {

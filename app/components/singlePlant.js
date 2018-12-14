@@ -9,13 +9,14 @@ class SinglePlant extends Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <main>
           <div>
             <div>
               <h2>{this.props.plant.commonName}</h2>
-              <img src={this.props.plant.imageUrl} />
+              <img className="profile-pic" src={this.props.plant.imageUrl} />
               <p>
                 <span>Age: </span>
                 {`${this.props.plant.age} years`}
@@ -43,6 +44,9 @@ class SinglePlant extends Component {
                 {this.props.plant.lastRepot}
               </p>
             </div>
+            <NavLink to={'/plants/editPlant'}>
+              <button>Edit</button>
+            </NavLink>
           </div>
         </main>
       </div>

@@ -3,6 +3,7 @@ import { Route, Switch, NavLink } from 'react-router-dom';
 import Plants from './plants.js';
 import SinglePlant from './singlePlant.js';
 import AddPlant from './addPlant.js';
+import EditPlant from './editPlant.js';
 
 const Root = () => {
   return (
@@ -18,6 +19,7 @@ const Root = () => {
       <main>
         <Switch>
           <Route exact path="/plants/addPlant" component={AddPlant} />
+          <Route exact path="/plants/editPlant" component={EditPlant} />
           <Route path="/plants/:plantId" component={SinglePlant} />
           <Route path="/plants" component={Plants} />
         </Switch>

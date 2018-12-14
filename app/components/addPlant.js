@@ -14,12 +14,22 @@ class AddPlant extends Component {
     const scientificName = event.target.scientificName.value;
     const imageUrl = event.target.imageUrl.value;
     const age = event.target.age.value;
-    const purchaseLocation = '';
-    const sunDirection = '';
-    const lastWatering = '';
-    const lastFeeding = '';
-    const lastReport = '';
-    this.props.addPlant({ commonName, scientificName, imageUrl, age });
+    const purchaseLocation = event.target.purchaseLocation.value;
+    const sunDirection = event.target.sunDirection.value;
+    const lastWatering = event.target.lastWatering.value;
+    const lastFeeding = event.target.lastFeeding.value;
+    const lastRepot = event.target.lastRepot.value;
+    this.props.addPlant({
+      commonName,
+      scientificName,
+      imageUrl,
+      age,
+      purchaseLocation,
+      sunDirection,
+      lastWatering,
+      lastFeeding,
+      lastRepot,
+    });
     this.props.loadPlants();
   }
 
@@ -47,12 +57,29 @@ class AddPlant extends Component {
         <p>Age (years):</p>
         <input type="text" name="age" placeholder="3" />
         <br />
-        <p>Description (not functional):</p>
-        <input
-          type="text"
-          name="description"
-          placeholder="Write something..."
-        />
+        <p>Purchase Location:</p>
+        <input type="text" name="purchaseLocation" placeholder="Home Depot" />
+        <br />
+        <p>Sun Direction:</p>
+        <select type="text" name="sunDirection">
+          <option>North</option>
+          <option>South</option>
+          <option>East</option>
+          <option>West</option>
+          <option>Northeast</option>
+          <option>Southeast</option>
+          <option>Northwest</option>
+          <option>Southwest</option>
+        </select>
+        <br />
+        <p>Last Watering:</p>
+        <input type="text" name="lastWatering" placeholder="2/3/2018" />
+        <br />
+        <p>Last Feeding:</p>
+        <input type="text" name="lastFeeding" placeholder="2/3/2018" />
+        <br />
+        <p>Last Repot:</p>
+        <input type="text" name="lastRepot" placeholder="2/3/2018" />
         <br />
         <button type="submit">Submit</button>
       </form>
