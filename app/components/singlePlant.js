@@ -9,13 +9,14 @@ class SinglePlant extends Component {
   }
 
   componentDidMount() {
-    this.props.loadPlants(this.props.match.params.plantId);
+    this.props.loadPlant(this.props.match.params.plantId);
   }
 
   handleDelete(plantId) {
     // delete plant from database
     event.preventDefault();
     this.props.deletePlant(plantId);
+    this.props.history.push('/plants');
   }
 
   render() {
@@ -46,6 +47,8 @@ class SinglePlant extends Component {
                 <span>Last Repot: </span>
                 {this.props.plant.lastRepot}
               </p>
+              <br />
+              <p>{this.props.plant.description}</p>
             </div>
             <NavLink to={'/plants/editPlant'}>
               <button>Edit</button>
@@ -63,7 +66,7 @@ class SinglePlant extends Component {
 const mapStateToProps = state => ({ plant: state.plants.selectedPlant });
 
 const mapDispatchToProps = dispatch => ({
-  loadPlants: plantId => dispatch(fetchOnePlant(plantId)),
+  loadPlant: plantId => dispatch(fetchOnePlant(plantId)),
   deletePlant: plantId => dispatch(deletePlant(plantId)),
 });
 

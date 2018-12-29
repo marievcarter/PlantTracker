@@ -8,18 +8,19 @@ class AddPlant extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
     const commonName = event.target.commonName.value;
     const scientificName = event.target.scientificName.value;
-    const imageUrl = event.target.imageUrl.value;
-    const age = event.target.age.value;
+    const imageUrl =
+      event.target.imageUrl.value || 'https://via.placeholder.com/150';
+    const age = event.target.age.value || 1;
     const purchaseLocation = event.target.purchaseLocation.value;
     const sunDirection = event.target.sunDirection.value;
-    const lastWatering = event.target.lastWatering.value;
-    const lastFeeding = event.target.lastFeeding.value;
-    const lastRepot = event.target.lastRepot.value;
-    this.props.addPlant({
+    const lastWatering = event.target.lastWatering.value || '1/1/2019';
+    const lastFeeding = event.target.lastFeeding.value || '1/1/2019';
+    const lastRepot = event.target.lastRepot.value || '1/1/2019';
+    await this.props.addPlant({
       commonName,
       scientificName,
       imageUrl,
@@ -30,7 +31,8 @@ class AddPlant extends Component {
       lastFeeding,
       lastRepot,
     });
-    this.props.loadPlants();
+    await this.props.loadPlants();
+    this.props.history.push('/plants');
   }
 
   render() {

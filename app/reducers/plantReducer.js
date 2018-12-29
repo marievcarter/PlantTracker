@@ -42,11 +42,10 @@ export const fetchOnePlant = plantId => async dispatch => {
 
 export const createNewPlant = plant => async dispatch => {
   const res = await Axios.post('/api/plants', plant);
-  dispatch(gotNewPlant(plant));
 };
 
 export const deletePlant = plantId => async dispatch => {
-  const res = await Axios.delete(`/api/plants/${plantId}`);
+  await Axios.delete(`/api/plants/${plantId}`);
   dispatch(removedPlant(plantId));
 };
 

@@ -15,6 +15,9 @@ const Root = () => {
         <NavLink to={'/'} className="navlink">
           PROFILE
         </NavLink>
+        <NavLink to={'/'} className="navlink">
+          STATS
+        </NavLink>
       </nav>
       <main>
         <Switch>

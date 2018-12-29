@@ -6,14 +6,21 @@ const Plant = db.define('plant', {
   commonName: {
     type: Sequelize.STRING,
   },
-  imageUrl: Sequelize.STRING,
-  scientificName: Sequelize.STRING,
-  age: Sequelize.INTEGER,
-  purchaseLocation: Sequelize.STRING,
-  sunDirection: Sequelize.STRING,
-  lastWatering: Sequelize.DATEONLY,
-  lastFeeding: Sequelize.DATEONLY,
-  lastRepot: Sequelize.DATEONLY,
+  imageUrl: {
+    type: Sequelize.STRING,
+  },
+  scientificName: { type: Sequelize.STRING },
+  age: { type: Sequelize.INTEGER },
+  purchaseLocation: { type: Sequelize.STRING },
+  sunDirection: { type: Sequelize.STRING },
+  lastWatering: {
+    type: Sequelize.DATEONLY,
+  },
+  lastFeeding: {
+    type: Sequelize.DATEONLY,
+  },
+  lastRepot: { type: Sequelize.DATEONLY },
+  description: { type: Sequelize.TEXT },
 });
 
 module.exports = { Plant, db };

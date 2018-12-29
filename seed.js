@@ -15,6 +15,8 @@ const plants = [
     lastWatering: '1/1/2000',
     lastFeeding: '1/1/2000',
     lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
   },
   {
     commonName: "Bishop's cap",
@@ -27,6 +29,8 @@ const plants = [
     lastWatering: '1/1/2000',
     lastFeeding: '1/1/2000',
     lastRepot: '1/1/2000',
+    description:
+      'Mitella diphylla is a clump forming, open woodland plant native to eastern North America.',
   },
   {
     commonName: 'Green Jelly Beans',
@@ -39,6 +43,8 @@ const plants = [
     lastWatering: '1/1/2000',
     lastFeeding: '1/1/2000',
     lastRepot: '1/1/2000',
+    description:
+      'Sedum rubrotinctum is an evergreen, succulent perennial with sprawling, leaning stems up to 8 inches (20 cm) tall. The leaves are jelly bean shaped, up to 0.8 inch (2 cm) long, green with red-brown tips which turn to bronze in the summer months. The flowers are small, star-shaped and yellow in color.',
   },
   {
     commonName: 'Ficus bonsai',
@@ -51,6 +57,8 @@ const plants = [
     lastWatering: '1/1/2000',
     lastFeeding: '1/1/2000',
     lastRepot: '1/1/2000',
+    description:
+      'Ficus retusa is a species of evergreen woody plant in the fig genus, native to the Malay Archipelago and Malesia floristic region. The species name has been widely mis-applied to Ficus microcarpa.',
   },
 ];
 

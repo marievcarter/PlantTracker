@@ -6,7 +6,17 @@ import { fetchOnePlant } from '../reducers/plantReducer.js';
 class EditPlant extends Component {
   constructor() {
     super();
-    this.state = {};
+    this.state = {
+      commonName: undefined,
+      scientificName: undefined,
+      imageUrl: undefined,
+      age: undefined,
+      purchaseLocation: undefined,
+      sunDirection: undefined,
+      lastWatering: undefined,
+      lastFeeding: undefined,
+      lastRepot: undefined,
+    };
     this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount() {
@@ -25,71 +35,73 @@ class EditPlant extends Component {
       <div>
         <main>
           <h1>Edit plant info</h1>
-          {!this.state || this.state === {} ? null : (
-            <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
-              <p>Common Name:</p>
-              <input
-                type="text"
-                name="commonName"
-                value={this.state.commonName}
-              />
-              <br />
-              <p>Scientific Name:</p>
-              <input
-                type="text"
-                name="scientificName"
-                value={this.state.scientificName}
-              />
-              <br />
-              <p>Image:</p>
-              <input type="text" name="imageUrl" value={this.state.imageUrl} />
-              <br />
-              <p>Age (years):</p>
-              <input type="text" name="age" value={this.state.age} />
-              <br />
-              <p>Purchase Location:</p>
-              <input
-                type="text"
-                name="purchaseLocation"
-                value={this.state.purchaseLocation}
-              />
-              <br />
-              <p>Sun Direction:</p>
-              <select type="text" value={this.state.sunDirection}>
-                <option>North</option>
-                <option>South</option>
-                <option>East</option>
-                <option>West</option>
-                <option>Northeast</option>
-                <option>Southeast</option>
-                <option>Northwest</option>
-                <option>Southwest</option>
-              </select>
-              <br />
-              <p>Last Watering:</p>
-              <input
-                type="text"
-                name="lastWatering"
-                value={this.state.lastWatering}
-              />
-              <br />
-              <p>Last Feeding:</p>
-              <input
-                type="text"
-                name="lastFeeding"
-                value={this.state.lastFeeding}
-              />
-              <br />
-              <p>Last Repot:</p>
-              <input
-                type="text"
-                name="lastRepot"
-                value={this.state.lastRepot}
-              />
-              <br />
-              <button type="submit">Submit</button>
-            </form>
-          )}
+          <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+            <p>Common Name:</p>
+            <input
+              type="text"
+              name="commonName"
+              value={this.state.commonName}
+            />
+            <br />
+            <p>Scientific Name:</p>
+            <input
+              type="text"
+              name="scientificName"
+              value={this.state.scientificName}
+            />
+            <br />
+            <p>Image:</p>
+            <input type="text" name="imageUrl" value={this.state.imageUrl} />
+            <br />
+            <p>Age (years):</p>
+            <input type="text" name="age" value={this.state.age} />
+            <br />
+            <p>Purchase Location:</p>
+            <input
+              type="text"
+              name="purchaseLocation"
+              value={this.state.purchaseLocation}
+            />
+            <br />
+            <p>Sun Direction:</p>
+            <select type="text" value={this.state.sunDirection}>
+              <option>North</option>
+              <option>South</option>
+              <option>East</option>
+              <option>West</option>
+              <option>Northeast</option>
+              <option>Southeast</option>
+              <option>Northwest</option>
+              <option>Southwest</option>
+            </select>
+            <br />
+            <p>Last Watering:</p>
+            <input
+              type="text"
+              name="lastWatering"
+              value={this.state.lastWatering}
+            />
+            <br />
+            <p>Last Feeding:</p>
+            <input
+              type="text"
+              name="lastFeeding"
+              value={this.state.lastFeeding}
+            />
+            <br />
+            <p>Last Repot:</p>
+            <input type="text" name="lastRepot" value={this.state.lastRepot} />
+            <br />
+            <p>Description:</p>
+            <textarea
+              rows="10"
+              cols="30"
+              value={this.state.description}
+              name="description"
+            />
+            <br />
+            <button type="submit">Submit</button>
+          </form>
         </main>
       </div>
     );
@@ -97,9 +109,5 @@ class EditPlant extends Component {
 }
 
 const mapStateToProps = state => ({ plant: state.plants.selectedPlant });
-
-// const mapDispatchToProps = dispatch => ({
-//   loadPlants: plantId => dispatch(fetchOnePlant(plantId)),
-// });
 
 export default withRouter(connect(mapStateToProps)(EditPlant));
