@@ -69,6 +69,20 @@ nav {
   font-family: 'Saira Extra Condensed', sans-serif;
 }
 
+.smallButton {
+  width: 5vw;
+  height: 5vw;
+}
+
+.smallButton:hover {
+  cursor: pointer;
+  border: 1px solid #a5a5a5;
+}
+
+.smallButtonContainer {
+  display: inline-block;
+}
+
 /* Responsive images */
 img {
   max-width: 100%;
@@ -121,9 +135,5 @@ img {
 
 form p {
   font-size: 0.75em;
-  font-weight: bold;
-}
-
-span {
   font-weight: bold;
 }

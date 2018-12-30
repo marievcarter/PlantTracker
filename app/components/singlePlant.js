@@ -28,29 +28,38 @@ class SinglePlant extends Component {
               <h2>{this.props.plant.commonName}</h2>
               <img className="profile-pic" src={this.props.plant.imageUrl} />
               <p>
-                <span>Age: </span>
+                <b>Scientific Name: </b>
+                {this.props.plant.scientificName}
+              </p>
+              <p>
+                <b>Age: </b>
                 {`${this.props.plant.age} years`}
               </p>
               <p>
-                <span>Sun Exposure: </span>
+                <b>Sun Exposure: </b>
                 {this.props.plant.sunDirection}
               </p>
               <p>
-                <span>Last Watering: </span>
-                {this.props.plant.lastWatering}
+                <b>Last Watering: </b>
+                {this.props.plant.lastWatering
+                  ? this.props.plant.lastWatering.slice(0, 10)
+                  : null}
               </p>
               <p>
-                <span>Last Feeding: </span>
-                {this.props.plant.lastFeeding}
+                <b>Last Feeding: </b>
+                {this.props.plant.lastFeeding
+                  ? this.props.plant.lastFeeding.slice(0, 10)
+                  : null}
               </p>
               <p>
-                <span>Last Repot: </span>
-                {this.props.plant.lastRepot}
+                <b>Last Repot: </b>
+                {this.props.plant.lastRepot
+                  ? this.props.plant.lastRepot.slice(0, 10)
+                  : null}
               </p>
-              <br />
               <p>{this.props.plant.description}</p>
             </div>
-            <NavLink to={'/plants/editPlant'}>
+            <NavLink to={`/plants/${this.props.plant.id}/editPlant`}>
               <button>Edit</button>
             </NavLink>
             <button onClick={this.handleDelete.bind(this, this.props.plant.id)}>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchOnePlant } from '../reducers/plantReducer.js';
+import { fetchOnePlant, updatePlant } from '../reducers/plantReducer.js';
 
 class EditPlant extends Component {
   constructor() {
@@ -20,13 +20,39 @@ class EditPlant extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
   componentDidMount() {
-    // this.props.loadPlants(this.props.match.params.plantId);
     this.setState(this.props.plant);
   }
 
   handleChange(event) {
-    console.log(event.target.value);
-    this.setState({ commonName: event.target.value });
+    this.setState({ [event.target.name]: event.target.value });
+  }
+
+  handleSubmit(plantId) {
+    event.preventDefault();
+    const { target } = event;
+    const commonName = target.commonName.value || this.state.commonName;
+    const scientificName =
+      target.scientificName.value || this.state.scientificName;
+    const imageUrl = target.imageUrl.value || this.state.imageUrl;
+    const age = target.age.value || this.state.age;
+    const sunDirection = target.sunDirection.value || this.state.sunDirection;
+    const lastWatering = target.lastWatering.value || this.state.lastWatering;
+    const lastFeeding = target.lastFeeding.value || this.state.lastFeeding;
+    const lastRepot = target.lastRepot.value || this.state.lastRepot;
+    const description = target.description.value || this.state.description;
+    this.props.updatePlant(plantId, {
+      commonName,
+      scientificName,
+      imageUrl,
+      age,
+      sunDirection,
+      lastWatering,
+      lastFeeding,
+      lastRepot,
+      description,
+    });
+    this.props.loadPlant(plantId);
+    this.props.history.push(`/plants/${plantId}`);
   }
 
   // understand why refreshing causes selected plant data to be lost
@@ -35,7 +61,10 @@ class EditPlant extends Component {
       <div>
         <main>
           <h1>Edit plant info</h1>
-          <form onChange={this.handleChange} onSubmit={this.handleSubmit}>
+          <form
+            onChange={this.handleChange}
+            onSubmit={this.handleSubmit.bind(this, this.props.plant.id)}
+          >
             <p>Common Name:</p>
             <input
               type="text"
@@ -64,7 +93,11 @@ class EditPlant extends Component {
             />
             <br />
             <p>Sun Direction:</p>
-            <select type="text" value={this.state.sunDirection}>
+            <select
+              type="text"
+              name="sunDirection"
+              value={this.state.sunDirection}
+            >
               <option>North</option>
               <option>South</option>
               <option>East</option>
@@ -110,4 +143,14 @@ class EditPlant extends Component {
 
 const mapStateToProps = state => ({ plant: state.plants.selectedPlant });
 
-export default withRouter(connect(mapStateToProps)(EditPlant));
+const mapDispatchToProps = dispatch => ({
+  updatePlant: (plantId, updates) => dispatch(updatePlant(plantId, updates)),
+  loadPlant: plantId => dispatch(fetchOnePlant(plantId)),
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(EditPlant)
+);

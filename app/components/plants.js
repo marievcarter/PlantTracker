@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchPlants } from '../reducers/plantReducer.js';
-import AddPlant from './addPlant.js';
+import { fetchPlants, updateDate } from '../reducers/plantReducer.js';
 
 class Plants extends Component {
   componentDidMount() {
     this.props.loadPlants();
+  }
+
+  handleClick(plantId, field) {
+    event.preventDefault();
+    this.props.updateDate({ id: plantId, field });
   }
 
   render() {
@@ -17,9 +21,6 @@ class Plants extends Component {
           <button>+ Add Plant</button>
         </NavLink>
         <div className="flex-container">
-          {/* <aside>
-            <AddPlant className="flex-item-add" />
-          </aside> */}
           <main className="flex-container">
             <div className="flex-container-items flex-item-profiles">
               {this.props.plants.map(plant => {
@@ -29,6 +30,38 @@ class Plants extends Component {
                       <p className="link">{plant.commonName}</p>
                       <img src={plant.imageUrl} />
                     </NavLink>
+                    <div className="smallButtonContainer">
+                      <img
+                        onClick={this.handleClick.bind(
+                          this,
+                          plant.id,
+                          'lastWatering'
+                        )}
+                        className="smallButton"
+                        src="https://banner2.kisspng.com/20180224/ivw/kisspng-water-drop-clip-art-fine-water-droplets-5a912d7285c734.796749691519463794548.jpg"
+                        alt="water droplet"
+                      />
+                      <img
+                        onClick={this.handleClick.bind(
+                          this,
+                          plant.id,
+                          'lastRepot'
+                        )}
+                        className="smallButton"
+                        src="https://images.vexels.com/media/users/3/127671/isolated/preview/d3bbccb04209d6b020530973e53c56bc-flat-flower-tub-icon-by-vexels.png"
+                        alt="flower pot"
+                      />
+                      <img
+                        onClick={this.handleClick.bind(
+                          this,
+                          plant.id,
+                          'lastFeeding'
+                        )}
+                        className="smallButton"
+                        src="https://cdn0.iconfinder.com/data/icons/nature-3-6/52/130-512.png"
+                        alt="plant fertilizer"
+                      />
+                    </div>
                   </div>
                 );
               })}
@@ -46,6 +79,7 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   loadPlants: () => dispatch(fetchPlants()),
+  updateDate: updatesObj => dispatch(updateDate(updatesObj)),
 });
 
 export default withRouter(

@@ -22,7 +22,11 @@ const Root = () => {
       <main>
         <Switch>
           <Route exact path="/plants/addPlant" component={AddPlant} />
-          <Route exact path="/plants/editPlant" component={EditPlant} />
+          <Route
+            exact
+            path="/plants/:plantId/editPlant"
+            component={EditPlant}
+          />
           <Route path="/plants/:plantId" component={SinglePlant} />
           <Route path="/plants" component={Plants} />
         </Switch>

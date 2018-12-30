@@ -14,12 +14,12 @@ const Plant = db.define('plant', {
   purchaseLocation: { type: Sequelize.STRING },
   sunDirection: { type: Sequelize.STRING },
   lastWatering: {
-    type: Sequelize.DATEONLY,
+    type: 'TIMESTAMP',
   },
   lastFeeding: {
-    type: Sequelize.DATEONLY,
+    type: 'TIMESTAMP',
   },
-  lastRepot: { type: Sequelize.DATEONLY },
+  lastRepot: { type: 'TIMESTAMP' },
   description: { type: Sequelize.TEXT },
 });
 

@@ -5,6 +5,8 @@ const GOT_PLANTS_FROM_SERVER = 'GOT_PLANTS_FROM_SERVER';
 const GOT_PLANT_FROM_SERVER = 'GOT_PLANT_FROM_SERVER';
 const GOT_NEW_PLANT = 'GOT_NEW_PLANT';
 const REMOVED_PLANT = 'REMOVED_PLANT';
+const UPDATED_PLANT = 'UPDATED_PLANT';
+const UPDATED_DATE = 'UPDATED_DATE';
 
 // define action creators
 const gotPlants = plants => ({
@@ -25,6 +27,16 @@ const gotNewPlant = plant => ({
 const removedPlant = plantId => ({
   type: REMOVED_PLANT,
   plantId,
+});
+
+const updatedPlant = plant => ({
+  type: UPDATED_PLANT,
+  plant,
+});
+
+const updatedDate = plant => ({
+  type: UPDATED_DATE,
+  plant,
 });
 
 // thunk creators
@@ -49,6 +61,16 @@ export const deletePlant = plantId => async dispatch => {
   dispatch(removedPlant(plantId));
 };
 
+export const updatePlant = (plantId, updates) => async dispatch => {
+  const plant = await Axios.put(`/api/plants/${plantId}/editPlant`, updates);
+  dispatch(updatedPlant(plant));
+};
+
+export const updateDate = updatesObj => async dispatch => {
+  const plant = await Axios.put(`/api/plants/`, updatesObj);
+  dispatch(updatedDate(plant));
+};
+
 // initial state plants
 const initialState = { plants: [], selectedPlant: {} };
 
@@ -69,6 +91,10 @@ export const plantReducer = (state = initialState, action) => {
           }),
         ],
       };
+    case UPDATED_PLANT:
+      return { ...state, selectedPlant: action.plant };
+    case UPDATED_DATE:
+      return { ...state, selectedPlant: action.plant };
     default:
       return state;
   }
