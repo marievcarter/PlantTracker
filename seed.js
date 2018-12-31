@@ -1,7 +1,6 @@
 const { db } = require('./server/db');
 const { green, red } = require('chalk');
-const { Plant } = require('./server/db/plant.js');
-const { PlantDetail } = require('./server/db/plantDetail.js');
+const { Plant } = require('./server/db/plant');
 
 const plants = [
   {

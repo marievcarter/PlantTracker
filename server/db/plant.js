@@ -1,6 +1,6 @@
 // Plant model definition
 const Sequelize = require('sequelize');
-const db = require('./database.js');
+const db = require('./database');
 
 const Plant = db.define('plant', {
   commonName: {

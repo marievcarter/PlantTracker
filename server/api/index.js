@@ -4,10 +4,10 @@ const path = require('path');
 const router = express.Router();
 const volleyball = require('volleyball');
 
-const { Plant } = require('../db/plant.js');
+const { Plant } = require('../db/plant');
 
 router.use(function(req, res, next) {
-  req.models = require('../db/plant.js');
+  req.models = require('../db/plant');
   next();
 });
 
@@ -16,7 +16,7 @@ router.use(express.json());
 router.use(express.urlencoded({ extended: true }));
 
 // individual route file
-router.use('/plants', require('./plantRoutes.js'));
+router.use('/plants', require('./plantRoutes'));
 
 router.use((req, res, next) => {
   const err = new Error('API route not found!');

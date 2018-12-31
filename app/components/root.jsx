@@ -1,22 +1,19 @@
 import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
-import Plants from './plants.js';
-import SinglePlant from './singlePlant.js';
-import AddPlant from './addPlant.js';
-import EditPlant from './editPlant.js';
+import Plants from './plants';
+import SinglePlant from './singlePlant';
+import AddPlant from './addPlant';
+import EditPlant from './editPlant';
 
 const Root = () => {
   return (
     <div>
       <nav>
+        <NavLink to={'/profile'} className="navlink">
+          PLANT TRACK
+        </NavLink>
         <NavLink to={'/plants'} className="navlink">
-          PLANT TRACKER
-        </NavLink>
-        <NavLink to={'/'} className="navlink">
-          PROFILE
-        </NavLink>
-        <NavLink to={'/'} className="navlink">
-          STATS
+          COLLECTION
         </NavLink>
       </nav>
       <main>

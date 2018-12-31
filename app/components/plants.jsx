@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchPlants, updateDate } from '../reducers/plantReducer.js';
+import { fetchPlants, updateDate } from '../reducers/plantReducer';
 
 class Plants extends Component {
   componentDidMount() {
@@ -16,7 +16,7 @@ class Plants extends Component {
   render() {
     return (
       <div>
-        <h1 className="title">Plant Collection</h1>
+        <h1 className="title">Collection</h1>
         <NavLink to={'/plants/addPlant'}>
           <button>+ Add Plant</button>
         </NavLink>

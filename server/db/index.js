@@ -1,9 +1,9 @@
 'use strict';
 
-const db = require('./database.js');
+const db = require('./database');
 
 // Bring in database models
-const { Plant } = require('./plant.js');
+const { Plant } = require('./plant');
 
 module.exports = {
   db,
