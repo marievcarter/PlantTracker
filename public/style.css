@@ -74,6 +74,11 @@ nav {
   height: 5vw;
 }
 
+.medium-button {
+  width: 10vw;
+  height: 10vw;
+}
+
 .smallButton:hover {
   cursor: pointer;
   border: 1px solid #a5a5a5;
