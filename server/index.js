@@ -2,12 +2,12 @@
 
 const express = require('express');
 const path = require('path');
-const volleyball = require('morgan');
+const morgan = require('morgan');
 
 const app = express();
 
 // logging middleware
-app.use(volleyball);
+app.use(morgan('default'));
 
 // body parsing middleware
 app.use(express.json());
