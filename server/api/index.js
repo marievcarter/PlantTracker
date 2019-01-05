@@ -2,7 +2,7 @@
 const express = require('express');
 const path = require('path');
 const router = express.Router();
-const morgan = require('morgan');
+// const morgan = require('morgan');
 
 const { Plant } = require('../db/plant');
 

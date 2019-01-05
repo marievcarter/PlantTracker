@@ -6,7 +6,7 @@ const pkg = require('../../package.json');
 
 console.log(chalk.yellow('opening database connection'));
 
-const db = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
+let db = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
   dialectOptions: {
     useUTC: false,
   },
