@@ -8,6 +8,8 @@
     "start-server": "nodemon --watch server main.js -e html,js,css",
     "build-watch": "webpack -w",
     "start": "node main.js",
+    "deploy": "script/deploy",
+    "heroku-token": "script/encrypt-heroku-auth-token",
     "seed": "node seed.js"
   },
   "repository": {
