@@ -14,3 +14,4 @@ let db = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
 });
 
 module.exports = db;
+// just adding something
