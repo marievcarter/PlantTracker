@@ -7,7 +7,7 @@
     "start:dev": "npm run build-watch & npm run start-server",
     "start-server": "nodemon --watch server main.js -e html,js,css",
     "build-watch": "webpack -w",
-    "start": "npm run build-watch & npm run start-server",
+    "start": "node main.js",
     "seed": "node seed.js"
   },
   "repository": {
