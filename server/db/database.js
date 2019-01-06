@@ -3,10 +3,12 @@
 const chalk = require('chalk');
 const Sequelize = require('sequelize');
 const pkg = require('../../package.json');
+const dbUrl =
+  process.env.DATABASE_URL || `postgres://localhost:5432/${pkg.name}`;
 
 console.log(chalk.yellow('opening database connection'));
 
-let db = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
+let db = new Sequelize(dbUrl, {
   dialectOptions: {
     useUTC: false,
   },
@@ -14,4 +16,3 @@ let db = new Sequelize(`postgres://localhost:5432/${pkg.name}`, {
 });
 
 module.exports = db;
-// just adding something
