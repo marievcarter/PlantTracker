@@ -7,7 +7,7 @@ const dbUrl =
   process.env.DATABASE_URL || `postgres://localhost:5432/${pkg.name}`;
 
 console.log(chalk.yellow('opening database connection'));
-
+console.log(dbUrl);
 let db = new Sequelize(dbUrl, {
   dialectOptions: {
     useUTC: false,
