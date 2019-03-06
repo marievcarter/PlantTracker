@@ -332,6 +332,136 @@ exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(AddPlant);
 
 /***/ }),
 
+/***/ "./app/components/dashboard.jsx":
+/*!**************************************!*\
+  !*** ./app/components/dashboard.jsx ***!
+  \**************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Profile = function (_Component) {
+  _inherits(Profile, _Component);
+
+  function Profile() {
+    _classCallCheck(this, Profile);
+
+    return _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).apply(this, arguments));
+  }
+
+  _createClass(Profile, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement('img', {
+          className: 'medium-button',
+          src: 'https://png.pngtree.com/element_origin_min_pic/16/12/28/dc4bbaae38535e735ae8c19a730d539c.jpg'
+        }),
+        _react2.default.createElement('img', {
+          className: 'medium-button',
+          src: 'https://ya-webdesign.com/images250_/succulent-svg-potted-cactus-2.png'
+        }),
+        _react2.default.createElement(
+          'div',
+          { className: 'flex-container-items' },
+          _react2.default.createElement(
+            'div',
+            { className: 'profile' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              'Upcoming Reminders'
+            ),
+            _react2.default.createElement(
+              'span',
+              null,
+              _react2.default.createElement(
+                'b',
+                null,
+                'January 4, 2019'
+              )
+            ),
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'Water ficus bonsai'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Repot ponytail palm'
+              )
+            ),
+            _react2.default.createElement(
+              'span',
+              null,
+              _react2.default.createElement(
+                'b',
+                null,
+                'January 8, 2019'
+              )
+            ),
+            _react2.default.createElement(
+              'ul',
+              null,
+              _react2.default.createElement(
+                'li',
+                null,
+                'Fertilize domino cactus'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Water aloe vera'
+              ),
+              _react2.default.createElement(
+                'li',
+                null,
+                'Water snake plant'
+              )
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return Profile;
+}(_react.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)()(Profile));
+
+/***/ }),
+
 /***/ "./app/components/editPlant.jsx":
 /*!**************************************!*\
   !*** ./app/components/editPlant.jsx ***!
@@ -778,136 +908,6 @@ exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapSt
 
 /***/ }),
 
-/***/ "./app/components/profile.jsx":
-/*!************************************!*\
-  !*** ./app/components/profile.jsx ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _react = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-
-var _react2 = _interopRequireDefault(_react);
-
-var _reactRouterDom = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-
-var _reactRedux = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Profile = function (_Component) {
-  _inherits(Profile, _Component);
-
-  function Profile() {
-    _classCallCheck(this, Profile);
-
-    return _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).apply(this, arguments));
-  }
-
-  _createClass(Profile, [{
-    key: 'render',
-    value: function render() {
-      return _react2.default.createElement(
-        'div',
-        null,
-        _react2.default.createElement('img', {
-          className: 'medium-button',
-          src: 'https://png.pngtree.com/element_origin_min_pic/16/12/28/dc4bbaae38535e735ae8c19a730d539c.jpg'
-        }),
-        _react2.default.createElement('img', {
-          className: 'medium-button',
-          src: 'https://ya-webdesign.com/images250_/succulent-svg-potted-cactus-2.png'
-        }),
-        _react2.default.createElement(
-          'div',
-          { className: 'flex-container-items' },
-          _react2.default.createElement(
-            'div',
-            { className: 'profile' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              'Upcoming Reminders'
-            ),
-            _react2.default.createElement(
-              'span',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'January 4, 2019'
-              )
-            ),
-            _react2.default.createElement(
-              'ul',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'Water ficus bonsai'
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                'Repot ponytail palm'
-              )
-            ),
-            _react2.default.createElement(
-              'span',
-              null,
-              _react2.default.createElement(
-                'b',
-                null,
-                'January 8, 2019'
-              )
-            ),
-            _react2.default.createElement(
-              'ul',
-              null,
-              _react2.default.createElement(
-                'li',
-                null,
-                'Fertilize domino cactus'
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                'Water aloe vera'
-              ),
-              _react2.default.createElement(
-                'li',
-                null,
-                'Water snake plant'
-              )
-            )
-          )
-        )
-      );
-    }
-  }]);
-
-  return Profile;
-}(_react.Component);
-
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)()(Profile));
-
-/***/ }),
-
 /***/ "./app/components/root.jsx":
 /*!*********************************!*\
   !*** ./app/components/root.jsx ***!
@@ -944,9 +944,9 @@ var _editPlant = __webpack_require__(/*! ./editPlant */ "./app/components/editPl
 
 var _editPlant2 = _interopRequireDefault(_editPlant);
 
-var _profile = __webpack_require__(/*! ./profile */ "./app/components/profile.jsx");
+var _dashboard = __webpack_require__(/*! ./dashboard */ "./app/components/dashboard.jsx");
 
-var _profile2 = _interopRequireDefault(_profile);
+var _dashboard2 = _interopRequireDefault(_dashboard);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -959,13 +959,8 @@ var Root = function Root() {
       null,
       _react2.default.createElement(
         _reactRouterDom.NavLink,
-        { to: '/profile', className: 'navlink' },
+        { to: '/dashboard', className: 'navlink' },
         'PLANT TRACK'
-      ),
-      _react2.default.createElement(
-        _reactRouterDom.NavLink,
-        { to: '/profile', className: 'navlink' },
-        'HOME'
       ),
       _react2.default.createElement(
         _reactRouterDom.NavLink,
@@ -987,7 +982,8 @@ var Root = function Root() {
         }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/plants/:plantId', component: _singlePlant2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/plants', component: _plants2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _profile2.default })
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/dashboard', component: _dashboard2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/', component: _dashboard2.default })
       )
     )
   );

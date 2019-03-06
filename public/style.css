@@ -22,14 +22,14 @@ body {
 
 nav {
   align-items: center;
-  background-color: #589b76;
+  background-color: #f7f7f7;
   display: flex;
   height: 80px;
   padding: 10px;
 }
 
 nav > .navlink {
-  color: #f7f7f7;
+  color: #589b76;
 }
 
 .title {

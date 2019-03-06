@@ -4,17 +4,14 @@ import Plants from './plants';
 import SinglePlant from './singlePlant';
 import AddPlant from './addPlant';
 import EditPlant from './editPlant';
-import Profile from './profile';
+import Dashboard from './dashboard';
 
 const Root = () => {
   return (
     <div>
       <nav>
-        <NavLink to={'/profile'} className="navlink">
+        <NavLink to={'/dashboard'} className="navlink">
           PLANT TRACK
-        </NavLink>
-        <NavLink to={'/profile'} className="navlink">
-          HOME
         </NavLink>
         <NavLink to={'/plants'} className="navlink">
           COLLECTION
@@ -30,7 +27,8 @@ const Root = () => {
           />
           <Route path="/plants/:plantId" component={SinglePlant} />
           <Route path="/plants" component={Plants} />
-          <Route path="/profile" component={Profile} />
+          <Route path="/dashboard" component={Dashboard} />
+          <Route path="/" component={Dashboard} />
         </Switch>
       </main>
     </div>
