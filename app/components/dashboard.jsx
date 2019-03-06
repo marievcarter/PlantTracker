@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
-class Profile extends Component {
+class Dashboard extends Component {
   render() {
     return (
       <div>
@@ -39,4 +39,4 @@ class Profile extends Component {
   }
 }
 
-export default withRouter(connect()(Profile));
+export default withRouter(connect()(Dashboard));

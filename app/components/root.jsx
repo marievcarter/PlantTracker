@@ -11,7 +11,7 @@ const Root = () => {
     <div>
       <nav>
         <NavLink to={'/dashboard'} className="navlink">
-          PLANT TRACK
+          DASHBOARD
         </NavLink>
         <NavLink to={'/plants'} className="navlink">
           COLLECTION

@@ -364,16 +364,16 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var Profile = function (_Component) {
-  _inherits(Profile, _Component);
+var Dashboard = function (_Component) {
+  _inherits(Dashboard, _Component);
 
-  function Profile() {
-    _classCallCheck(this, Profile);
+  function Dashboard() {
+    _classCallCheck(this, Dashboard);
 
-    return _possibleConstructorReturn(this, (Profile.__proto__ || Object.getPrototypeOf(Profile)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (Dashboard.__proto__ || Object.getPrototypeOf(Dashboard)).apply(this, arguments));
   }
 
-  _createClass(Profile, [{
+  _createClass(Dashboard, [{
     key: 'render',
     value: function render() {
       return _react2.default.createElement(
@@ -455,10 +455,10 @@ var Profile = function (_Component) {
     }
   }]);
 
-  return Profile;
+  return Dashboard;
 }(_react.Component);
 
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)()(Profile));
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)()(Dashboard));
 
 /***/ }),
 
@@ -960,7 +960,7 @@ var Root = function Root() {
       _react2.default.createElement(
         _reactRouterDom.NavLink,
         { to: '/dashboard', className: 'navlink' },
-        'PLANT TRACK'
+        'DASHBOARD'
       ),
       _react2.default.createElement(
         _reactRouterDom.NavLink,

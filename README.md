@@ -8,8 +8,14 @@ Add new plants.
 
 Set a last watered, last feeding and last repot date.
 
-## Features In Progress
+### TODO
 
-Create the home page as a dashboard.
+Create a separate notifications bar at the top of dashboard component.
+
+Bring in charts (possibly recharts) to show general trends such as weekly
+watering per plant, etc on the dashboard.
+
+Restructure files so that components are all exported into a single file where
+other files can then import from.
 
 Make sure every plant has a picture loading properly.
