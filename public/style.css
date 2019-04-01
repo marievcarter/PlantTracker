@@ -1,15 +1,20 @@
-* {
-  box-sizing: border-box;
-  font-family: verdana, sans-serif;
+.navlink {
+  text-decoration: none;
+  padding: 1em;
+  color: #589b76;
 }
 
+/* * {
+  box-sizing: border-box;
+  font-family: verdana, sans-serif;
+} */
+/*
 html {
   height: 100%;
 }
 
 body {
   background: #f7f7f7;
-  /* linear-gradient(#ffffff, #ccffe3); */
   height: 100%;
   padding: 0;
   margin: 0;
@@ -26,19 +31,12 @@ nav {
   display: flex;
   height: 80px;
   padding: 10px;
-}
+} */
 
-nav > .navlink {
-  color: #589b76;
-}
+/*
 
 .title {
   text-align: center;
-}
-
-.navlink {
-  text-decoration: none;
-  padding: 1em;
 }
 
 main {
@@ -46,9 +44,9 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
+} */
 
-p {
+/* p {
   color: #252525;
   line-height: 1.5em;
 }
@@ -67,9 +65,9 @@ h2,
 h3,
 nav {
   font-family: 'Saira Extra Condensed', sans-serif;
-}
+} */
 
-.smallButton {
+/* .smallButton {
   width: 5vw;
   height: 5vw;
 }
@@ -86,10 +84,10 @@ nav {
 
 .smallButtonContainer {
   display: inline-block;
-}
+} */
 
 /* Responsive images */
-img {
+/* img {
   max-width: 100%;
   height: auto;
 }
@@ -103,9 +101,9 @@ img {
 .flex-item-add {
   display: flex;
   order: 1;
-}
+} */
 
-.flex-container-items {
+/* .flex-container-items {
   width: 100%;
 }
 
@@ -127,9 +125,9 @@ img {
   margin: 10px 10px 10px 10px;
   padding: 0px 10px 10px 10px;
   border-radius: 10px;
-}
+} */
 
-.profile-pic {
+/* .profile-pic {
   width: 50%;
   height: auto;
 }
@@ -141,4 +139,6 @@ img {
 form p {
   font-size: 0.75em;
   font-weight: bold;
-}
+} */
+
+/* Collections Page Styes */

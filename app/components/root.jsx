@@ -5,19 +5,26 @@ import SinglePlant from './singlePlant';
 import AddPlant from './addPlant';
 import EditPlant from './editPlant';
 import Dashboard from './dashboard';
+import { withStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import CssBaseline from '@material-ui/core/CssBaseline';
+
+const styles = theme => ({});
 
 const Root = () => {
   return (
-    <div>
-      <nav>
-        <NavLink to={'/dashboard'} className="navlink">
-          DASHBOARD
-        </NavLink>
-        <NavLink to={'/plants'} className="navlink">
-          COLLECTION
-        </NavLink>
-      </nav>
-      <main>
+    <React.Fragment>
+      <CssBaseline />
+      <div>
+        <nav>
+          <NavLink to={'/dashboard'} className="navlink">
+            DASHBOARD
+          </NavLink>
+          <NavLink to={'/plants'} className="navlink">
+            COLLECTION
+          </NavLink>
+        </nav>
+        {/* <main>
         <Switch>
           <Route exact path="/plants/addPlant" component={AddPlant} />
           <Route
@@ -30,9 +37,10 @@ const Root = () => {
           <Route path="/dashboard" component={Dashboard} />
           <Route path="/" component={Dashboard} />
         </Switch>
-      </main>
-    </div>
+      </main> */}
+      </div>
+    </React.Fragment>
   );
 };
 
-export default Root;
+export default withStyles(styles)(Root);

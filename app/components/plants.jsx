@@ -16,7 +16,6 @@ class Plants extends Component {
   render() {
     return (
       <div>
-        {/* <h1 className="title">Collection</h1> */}
         <NavLink to={'/plants/addPlant'}>
           <button>+ Add Plant</button>
         </NavLink>

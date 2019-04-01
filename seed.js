@@ -6,7 +6,7 @@ const plants = [
   {
     commonName: 'Ponytail Palm',
     imageUrl:
-      'https://cdn.shopify.com/s/files/1/1025/1611/products/ponytail-palm-10_-growers-pot_600x.jpg?v=1537384947',
+      'https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Nursery-Pot-10_24a71bea-a503-4ef0-acae-29ce81f8eb86.jpg?v=1544499886',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -34,7 +34,7 @@ const plants = [
   {
     commonName: 'Green Jelly Beans',
     imageUrl:
-      'https://images.prod.meredith.com/product/bd3cadba1a55d081f9648acfe022a13a/1533383869656/l/jelly-bean-succulent-plant-sedum-rubrotictum-loves-the-sun-3-5-pot',
+      'https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/631x631/products/1050/5030/rubitinctum_porknbeans_november__21501.1512101823.jpg?c=2',
     scientificName: 'Sedum rubrotinctum',
     age: 1,
     purchaseLocation: 'Leaf & Clay',
