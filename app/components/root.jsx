@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
 import Plants from './plants';
 import SinglePlant from './singlePlant';
-import AddPlant from './addPlant';
+import AddPlant from './AddPlant';
 import EditPlant from './editPlant';
 import Dashboard from './dashboard';
 import { withStyles } from '@material-ui/core/styles';
