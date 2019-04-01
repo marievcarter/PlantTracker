@@ -4,16 +4,11 @@ import { connect } from 'react-redux';
 import { fetchOnePlant, deletePlant } from '../reducers/plantReducer';
 
 class SinglePlant extends Component {
-  constructor() {
-    super();
-  }
-
   componentDidMount() {
     this.props.loadPlant(this.props.match.params.plantId);
   }
 
   handleDelete(plantId) {
-    // delete plant from database
     event.preventDefault();
     this.props.deletePlant(plantId);
     this.props.history.push('/plants');

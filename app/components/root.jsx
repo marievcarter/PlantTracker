@@ -1,10 +1,6 @@
 import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
-import Plants from './plants';
-import SinglePlant from './singlePlant';
-import AddPlant from './AddPlant';
-import EditPlant from './editPlant';
-import Dashboard from './dashboard';
+import { AddPlant, Plants, SinglePlant, EditPlant, Dashboard } from './';
 import { withStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -24,20 +20,20 @@ const Root = () => {
             COLLECTION
           </NavLink>
         </nav>
-        {/* <main>
-        <Switch>
-          <Route exact path="/plants/addPlant" component={AddPlant} />
-          <Route
-            exact
-            path="/plants/:plantId/editPlant"
-            component={EditPlant}
-          />
-          <Route path="/plants/:plantId" component={SinglePlant} />
-          <Route path="/plants" component={Plants} />
-          <Route path="/dashboard" component={Dashboard} />
-          <Route path="/" component={Dashboard} />
-        </Switch>
-      </main> */}
+        <main>
+          <Switch>
+            <Route exact path="/plants/addPlant" component={AddPlant} />
+            <Route
+              exact
+              path="/plants/:plantId/editPlant"
+              component={EditPlant}
+            />
+            <Route path="/plants/:plantId" component={SinglePlant} />
+            <Route path="/plants" component={Plants} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/" component={Dashboard} />
+          </Switch>
+        </main>
       </div>
     </React.Fragment>
   );
