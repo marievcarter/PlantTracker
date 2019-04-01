@@ -16,11 +16,10 @@ class Plants extends Component {
   render() {
     return (
       <div>
-        <NavLink to={'/plants/addPlant'}>
-          <button>+ Add Plant</button>
-        </NavLink>
+        <NavLink to={'/plants/addPlant'} />
         <div className="flex-container">
           <main className="flex-container">
+            <button>+ Add Plant</button>
             <div className="flex-container-items flex-item-profiles">
               {this.props.plants.map(plant => {
                 return (

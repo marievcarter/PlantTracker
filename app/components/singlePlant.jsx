@@ -15,51 +15,55 @@ class SinglePlant extends Component {
   }
 
   render() {
+    const {
+      commonName,
+      scientificName,
+      age,
+      imageUrl,
+      sunDirection,
+      lastFeeding,
+      lastRepot,
+      lastWatering,
+      description,
+      id,
+    } = this.props.plant;
     return (
       <div>
-        <main>
-          <div>
+        <main className="flex-container">
+          <div className="flex-container-items">
             <div>
-              <h2>{this.props.plant.commonName}</h2>
-              <img className="profile-pic" src={this.props.plant.imageUrl} />
+              <h2>{commonName}</h2>
+              <img className="profile-pic" src={imageUrl} />
               <p>
                 <b>Scientific Name: </b>
-                {this.props.plant.scientificName}
+                {scientificName}
               </p>
               <p>
                 <b>Age: </b>
-                {`${this.props.plant.age} years`}
+                {`${age} years`}
               </p>
               <p>
                 <b>Sun Exposure: </b>
-                {this.props.plant.sunDirection}
+                {sunDirection}
               </p>
               <p>
                 <b>Last Watering: </b>
-                {this.props.plant.lastWatering
-                  ? this.props.plant.lastWatering.slice(0, 10)
-                  : null}
+                {lastWatering ? lastWatering.slice(0, 10) : null}
               </p>
               <p>
                 <b>Last Feeding: </b>
-                {this.props.plant.lastFeeding
-                  ? this.props.plant.lastFeeding.slice(0, 10)
-                  : null}
+                {lastFeeding ? lastFeeding.slice(0, 10) : null}
               </p>
               <p>
                 <b>Last Repot: </b>
-                {this.props.plant.lastRepot
-                  ? this.props.plant.lastRepot.slice(0, 10)
-                  : null}
+                {lastRepot ? lastRepot.slice(0, 10) : null}
               </p>
-              <p>{this.props.plant.description}</p>
+              <p>{description}</p>
             </div>
-            <NavLink to={`/plants/${this.props.plant.id}/editPlant`}>
+            <NavLink to={`/plants/${id}/editPlant`}>
               <button>Edit</button>
             </NavLink>
-            <button onClick={this.handleDelete.bind(this, this.props.plant.id)}>
-              Delete
-            </button>
+            <button onClick={this.handleDelete.bind(this, id)}>Delete</button>
           </div>
         </main>
       </div>
