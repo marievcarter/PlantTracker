@@ -1,6 +1,10 @@
 # Plant Tracker
 
-A site for managing your plants. Here you can keep track of plants and their care instructions, create recurring calendar events for tasks like watering, and identify unknown plants with the plant identifier page.
+A site for managing my plants. Currently only tracks my personal plants, but will eventually be extended to support multiple users., and
+
+Add new plants, information such as care instruction, and recurring calendar events for watering, repotting, and fertilizer.
+
+A plant indentification page is in the works.
 
 ## Working Features
 
