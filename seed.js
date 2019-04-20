@@ -5,8 +5,7 @@ const { Plant } = require('./server/db/plant');
 const plants = [
   {
     commonName: 'Ponytail Palm',
-    imageUrl:
-      'https://cdn.shopify.com/s/files/1/0013/3529/6118/products/Nursery-Pot-10_24a71bea-a503-4ef0-acae-29ce81f8eb86.jpg?v=1544499886',
+    imageUrl: 'https://via.placeholder.com/150',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -19,8 +18,7 @@ const plants = [
   },
   {
     commonName: "Bishop's cap",
-    imageUrl:
-      'https://worldofsucculents.com/wp-content/uploads/2018/03/Bishop%E2%80%99s-Cap-Astrophytum-myriostigma.jpg',
+    imageUrl: 'https://via.placeholder.com/150',
     scientificName: 'Astrophytum myriostigma',
     age: 1,
     purchaseLocation: 'Leaf & Clay',
@@ -33,8 +31,7 @@ const plants = [
   },
   {
     commonName: 'Green Jelly Beans',
-    imageUrl:
-      'https://cdn11.bigcommerce.com/s-oqm1pc/images/stencil/631x631/products/1050/5030/rubitinctum_porknbeans_november__21501.1512101823.jpg?c=2',
+    imageUrl: 'https://via.placeholder.com/150',
     scientificName: 'Sedum rubrotinctum',
     age: 1,
     purchaseLocation: 'Leaf & Clay',
@@ -47,8 +44,7 @@ const plants = [
   },
   {
     commonName: 'Ficus bonsai',
-    imageUrl:
-      'https://images-na.ssl-images-amazon.com/images/I/71qU61D3D6L._SY355_.jpg',
+    imageUrl: 'https://via.placeholder.com/150',
     scientificName: 'Ficus retusa',
     age: 1,
     purchaseLocation: 'NYC street market',
