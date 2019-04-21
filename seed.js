@@ -55,31 +55,103 @@ const plants = [
     description:
       'Ficus retusa is a species of evergreen woody plant in the fig genus, native to the Malay Archipelago and Malesia floristic region. The species name has been widely mis-applied to Ficus microcarpa.',
   },
+  {
+    commonName: 'Ponytail Palm',
+    imageUrl: 'https://via.placeholder.com/150',
+    scientificName: 'Beaucarnea recurvata',
+    age: 2,
+    purchaseLocation: 'Grand St. asian market',
+    sunDirection: 'south',
+    lastWatering: '1/1/2000',
+    lastFeeding: '1/1/2000',
+    lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
+  },
+  {
+    commonName: 'Ponytail Palm',
+    imageUrl: 'https://via.placeholder.com/150',
+    scientificName: 'Beaucarnea recurvata',
+    age: 2,
+    purchaseLocation: 'Grand St. asian market',
+    sunDirection: 'south',
+    lastWatering: '1/1/2000',
+    lastFeeding: '1/1/2000',
+    lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
+  },
+  {
+    commonName: 'Ponytail Palm',
+    imageUrl: 'https://via.placeholder.com/150',
+    scientificName: 'Beaucarnea recurvata',
+    age: 2,
+    purchaseLocation: 'Grand St. asian market',
+    sunDirection: 'south',
+    lastWatering: '1/1/2000',
+    lastFeeding: '1/1/2000',
+    lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
+  },
+  {
+    commonName: 'Ponytail Palm',
+    imageUrl: 'https://via.placeholder.com/150',
+    scientificName: 'Beaucarnea recurvata',
+    age: 2,
+    purchaseLocation: 'Grand St. asian market',
+    sunDirection: 'south',
+    lastWatering: '1/1/2000',
+    lastFeeding: '1/1/2000',
+    lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
+  },
+  {
+    commonName: 'Ponytail Palm',
+    imageUrl: 'https://via.placeholder.com/150',
+    scientificName: 'Beaucarnea recurvata',
+    age: 2,
+    purchaseLocation: 'Grand St. asian market',
+    sunDirection: 'south',
+    lastWatering: '1/1/2000',
+    lastFeeding: '1/1/2000',
+    lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
+  },
+  {
+    commonName: 'Ponytail Palm',
+    imageUrl: 'https://via.placeholder.com/150',
+    scientificName: 'Beaucarnea recurvata',
+    age: 2,
+    purchaseLocation: 'Grand St. asian market',
+    sunDirection: 'south',
+    lastWatering: '1/1/2000',
+    lastFeeding: '1/1/2000',
+    lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
+  },
+  {
+    commonName: 'Ponytail Palm',
+    imageUrl: 'https://via.placeholder.com/150',
+    scientificName: 'Beaucarnea recurvata',
+    age: 2,
+    purchaseLocation: 'Grand St. asian market',
+    sunDirection: 'south',
+    lastWatering: '1/1/2000',
+    lastFeeding: '1/1/2000',
+    lastRepot: '1/1/2000',
+    description:
+      'Beaucarnea recurvata is a species of plant in the family Asparagaceae, native to the states of Tamaulipas, Veracruz and San Luis Potosí in eastern Mexico. Despite its common name, it is not closely related to the true palms. It has become popular in Europe and worldwide as an ornamental plant.',
+  },
 ];
-
-// const plantDetails = [
-//   {
-//     purchaseLocation: 'Grand St. asian market',
-//     sunDirection: 'south',
-//     lastWatering: '1/1/2000',
-//     lastFeeding: '1/1/2000',
-//     lastRepot: '1/1/2000',
-//   },
-//   {
-//     purchaseLocation: 'NYC street market',
-//     sunDirection: 'south',
-//     lastWatering: '1/1/2000',
-//     lastFeeding: '1/1/2000',
-//     lastRepot: '1/1/2000',
-//   },
-// ];
 
 const seed = async () => {
   await db.sync({ force: true });
 
   await Promise.all(plants.map(plant => Plant.create(plant))); //.then(
-  //Promise.all(plantDetails.map(detail => PlantDetail.create(detail)))
-  //);
 
   console.log(green('Seeding success!'));
   db.close();
