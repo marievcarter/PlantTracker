@@ -1,11 +1,13 @@
 import React from 'react';
 import { Route, Switch, NavLink } from 'react-router-dom';
-import { AddPlant, Gallery, SinglePlant, EditPlant, Dashboard } from '.';
-import { withStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
+import {
+  AddPlant,
+  Gallery,
+  SinglePlant,
+  EditPlant,
+  Dashboard,
+} from '../components';
 import CssBaseline from '@material-ui/core/CssBaseline';
-
-const styles = theme => ({});
 
 const Root = () => {
   return (
@@ -13,14 +15,11 @@ const Root = () => {
       <CssBaseline />
       <div>
         <nav>
+          <NavLink to={'/dashboard'} className="navlink">
+            DASHBOARD
+          </NavLink>
           <NavLink to={'/gallery'} className="navlink">
             GALLERY
-          </NavLink>
-          <NavLink to={'/dashboard'} className="navlink">
-            SCHEDULE
-          </NavLink>
-          <NavLink to={'/dashboard'} className="navlink">
-            TRENDS
           </NavLink>
         </nav>
         <main>
@@ -42,4 +41,4 @@ const Root = () => {
   );
 };
 
-export default withStyles(styles)(Root);
+export default Root;
