@@ -43,19 +43,19 @@ const GalleryItem = props => {
           <img
             onClick={setWaterDate}
             className="smallButton"
-            src="https://banner2.kisspng.com/20180224/ivw/kisspng-water-drop-clip-art-fine-water-droplets-5a912d7285c734.796749691519463794548.jpg"
+            src="https://images.unsplash.com/photo-1476897017502-219c9169bd6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
             alt="water droplet"
           />
           <img
             onClick={setRepotDate}
             className="smallButton"
-            src="https://images.vexels.com/media/users/3/127671/isolated/preview/d3bbccb04209d6b020530973e53c56bc-flat-flower-tub-icon-by-vexels.png"
+            src="https://images.unsplash.com/photo-1537204319452-fdbd29e2ccc7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80"
             alt="flower pot"
           />
           <img
             onClick={setFertilizeDate}
             className="smallButton"
-            src="https://cdn0.iconfinder.com/data/icons/nature-3-6/52/130-512.png"
+            src="https://images.unsplash.com/photo-1487017931017-0e0d9e02bb0c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1950&q=80"
             alt="plant fertilizer"
           />
         </div>
