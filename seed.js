@@ -5,7 +5,8 @@ const { Plant } = require('./server/db/plant');
 const plants = [
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -18,7 +19,8 @@ const plants = [
   },
   {
     commonName: "Bishop's cap",
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Astrophytum myriostigma',
     age: 1,
     purchaseLocation: 'Leaf & Clay',
@@ -31,7 +33,8 @@ const plants = [
   },
   {
     commonName: 'Green Jelly Beans',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Sedum rubrotinctum',
     age: 1,
     purchaseLocation: 'Leaf & Clay',
@@ -44,7 +47,8 @@ const plants = [
   },
   {
     commonName: 'Ficus bonsai',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Ficus retusa',
     age: 1,
     purchaseLocation: 'NYC street market',
@@ -57,7 +61,8 @@ const plants = [
   },
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -70,7 +75,8 @@ const plants = [
   },
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -83,7 +89,8 @@ const plants = [
   },
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -96,7 +103,8 @@ const plants = [
   },
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -109,7 +117,8 @@ const plants = [
   },
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -122,7 +131,8 @@ const plants = [
   },
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
@@ -135,7 +145,8 @@ const plants = [
   },
   {
     commonName: 'Ponytail Palm',
-    imageUrl: 'https://unsplash.com/photos/9Z1KRIfpBTM',
+    imageUrl:
+      'https://images.unsplash.com/photo-1504198266287-1659872e6590?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjExMjU4fQ&auto=format&fit=crop&w=1950&q=80',
     scientificName: 'Beaucarnea recurvata',
     age: 2,
     purchaseLocation: 'Grand St. asian market',
