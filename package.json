@@ -2,12 +2,12 @@
   "name": "planttracker",
   "version": "0.0.1",
   "description": "A site for tracking your personal plant collection.",
-  "main": "main.js",
+  "main": "server/index.js",
   "scripts": {
     "start:dev": "npm run build-watch & npm run start-server",
-    "start-server": "nodemon --watch server main.js -e html,js,css",
+    "start-server": "nodemon --watch server/server index.js -e html,js,css",
     "build-watch": "webpack -w",
-    "start": "node main.js",
+    "start": "node server/index.js",
     "deploy": "script/deploy",
     "heroku-token": "script/encrypt-heroku-auth-token",
     "seed": "node seed.js"

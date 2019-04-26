@@ -2,12 +2,16 @@
 
 const express = require('express');
 const path = require('path');
-// const morgan = require('morgan');
+const morgan = require('morgan');
+
+const { db } = require('./db');
+console.log(db);
+const PORT = process.env.PORT || 3000;
 
 const app = express();
 
 // logging middleware
-// app.use(morgan('default'));
+app.use(morgan('dev'));
 
 // body parsing middleware
 app.use(express.json());
@@ -28,5 +32,11 @@ app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(err.status || 500).send(err.message || 'Internal server error');
 });
+
+db.sync() // if you update your db schemas, make sure you drop the tables first and then recreate them
+  .then(() => {
+    console.log('db synced');
+    app.listen(PORT, () => console.log(`listening on port ${PORT}`));
+  });
 
 module.exports = app;
