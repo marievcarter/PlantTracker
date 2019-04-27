@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchPlants, updateDate } from '../reducers/plantReducer';
+import { fetchPlants, updateDate } from '../reducers/plant';
 import { GalleryItem } from './index.js';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';

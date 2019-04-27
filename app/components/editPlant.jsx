@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchOnePlant, updatePlant } from '../reducers/plantReducer';
+import { fetchOnePlant, updatePlant } from '../reducers/plant';
 
 class EditPlant extends Component {
   constructor() {

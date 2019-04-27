@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchOnePlant, deletePlant } from '../reducers/plantReducer';
+import { fetchOnePlant, deletePlant } from '../reducers/plant';
 
 class SinglePlant extends Component {
   componentDidMount() {

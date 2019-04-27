@@ -1,10 +1,13 @@
-import { plantReducer as plants } from './plantReducer';
+import plantReducer from './plant';
+import userReducer from './user';
 import { combineReducers, applyMiddleware } from 'redux';
 import loggingMiddleware from 'redux-logger';
 
-const rootReducer = combineReducers(
-  { plants },
+const store = combineReducers(
+  { plantReducer, userReducer },
   applyMiddleware(loggingMiddleware)
 );
 
-export default rootReducer;
+export default store;
+export * from './user';
+export * from './plant';
