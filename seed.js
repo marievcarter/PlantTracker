@@ -176,11 +176,31 @@ const plants = [
 
 const seed = async () => {
   await db.sync({ force: true });
-  await Promise.all(plants.map(plant => Plant.create(plant)));
-  await Promise.all(users.map(user => User.create(user)));
-  console.log(green('Seeding success!'));
-  db.close();
+  const [newUsers, newPlants] = await Promise.all([
+    User.bulkCreate(users, { returning: true, individualHooks: true }),
+    Plant.bulkCreate(plants, { returning: true, individualHooks: true }),
+  ]);
+  const [defaultUser] = newUsers;
+  await Promise.all(
+    newPlants.map(plant => {
+      plant.setUser(defaultUser);
+    })
+  );
 };
+
+async function runSeed() {
+  console.log('seeding....');
+  try {
+    await seed();
+  } catch (err) {
+    console.error(err);
+    process.exitCode = 1;
+  } finally {
+    console.log('closing db connection');
+    await db.close();
+    console.log('db connection closed');
+  }
+}
 
 seed().catch(err => {
   console.error(red('Something went wrong!'));
