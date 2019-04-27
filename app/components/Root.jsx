@@ -6,13 +6,24 @@ import {
   SinglePlant,
   EditPlant,
   Dashboard,
+  LogIn,
 } from '../components';
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { MuiThemeProvider } from '@material-ui/styles';
+import { green } from '@material-ui/core/colors';
+import { createMuiTheme } from '@material-ui/core/styles';
+
+// const theme = createMuiTheme({
+//   palette: {
+//     primary: green,
+//   },
+// });
 
 const Root = () => {
   return (
     <React.Fragment>
       <CssBaseline />
+      {/* <MuiThemeProvider theme={theme}> */}
       <div>
         <nav>
           <NavLink to={'/dashboard'} className="navlink">
@@ -33,10 +44,11 @@ const Root = () => {
             <Route path="/plants/:plantId" component={SinglePlant} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/dashboard" component={Dashboard} />
-            <Route path="/" component={Gallery} />
+            <Route path="/" component={LogIn} />
           </Switch>
         </main>
       </div>
+      {/* </MuiThemeProvider> */}
     </React.Fragment>
   );
 };
