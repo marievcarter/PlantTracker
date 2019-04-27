@@ -2,6 +2,21 @@ const db = require('./server/db');
 const { green, red } = require('chalk');
 const { Plant, User } = require('./server/db/models');
 
+const users = [
+  {
+    firstName: 'Marie',
+    lastName: 'Carter',
+    email: 'marievcarter@gmail.com',
+    password: 'password',
+  },
+  {
+    firstName: 'Guest',
+    lastName: 'User',
+    email: 'guest@email.com',
+    password: 'password',
+  },
+];
+
 const plants = [
   {
     commonName: 'Ponytail Palm',
@@ -161,9 +176,8 @@ const plants = [
 
 const seed = async () => {
   await db.sync({ force: true });
-
-  await Promise.all(plants.map(plant => Plant.create(plant))); //.then(
-
+  await Promise.all(plants.map(plant => Plant.create(plant)));
+  await Promise.all(users.map(user => User.create(user)));
   console.log(green('Seeding success!'));
   db.close();
 };
