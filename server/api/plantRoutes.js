@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Plant } = require('../db/plant');
+const { Plant } = require('../db/models');
 const Sequelize = require('sequelize');
 
 // GET api/plants

@@ -3,9 +3,10 @@
 const db = require('./db');
 
 // Bring in database models
-const { Plant } = require('./plant');
+require('./models');
 
-module.exports = {
-  db,
-  Plant,
-};
+module.exports = db;
+// module.exports = {
+//   db,
+//   Plant,
+// };

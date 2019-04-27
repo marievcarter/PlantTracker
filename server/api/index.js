@@ -4,10 +4,10 @@ const path = require('path');
 const router = express.Router();
 // const morgan = require('morgan');
 
-const { Plant } = require('../db/plant');
+const { Plant } = require('../db/models/plant');
 
 router.use(function(req, res, next) {
-  req.models = require('../db/plant');
+  req.models = require('../db/models/plant');
   next();
 });
 
