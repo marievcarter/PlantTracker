@@ -1,5 +1,6 @@
 const Sequelize = require('sequelize');
 const db = require('../db');
+const crypto = require('crypto'); // for salting password
 
 const User = db.define('user', {
   firstName: {
@@ -39,5 +40,33 @@ const User = db.define('user', {
 });
 
 /* Instance Methods */
+User.prototype.correctPassword = function(inputPwd) {
+  return User.encryptPassword(inputPwd, this.salt()) === this.password();
+};
+
+/* Class Methods */
+User.generateSalt = function() {
+  return crypto.randomBytes(16).toString('base64');
+};
+
+User.encryptPassword = function(plainText, salt) {
+  return crypto
+    .createHash('RSA-SHA256')
+    .update(plainText)
+    .update(plainText)
+    .update(salt)
+    .digest('hex');
+};
+
+/* Hooks */
+const setSaltAndPassword = user => {
+  if (user.changed('password')) {
+    user.salt = User.generateSalt();
+    user.password = User.encryptPassword(user.password(), user.salt());
+  }
+};
+
+User.beforeCreate(setSaltAndPassword);
+User.beforeUpdate(setSaltAndPassword);
 
 module.exports = User;

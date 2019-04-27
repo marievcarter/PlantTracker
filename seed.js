@@ -1,6 +1,6 @@
-const { db } = require('./server/db');
+const db = require('./server/db');
 const { green, red } = require('chalk');
-const { Plant } = require('./server/db/plant');
+const { Plant, User } = require('./server/db/models');
 
 const plants = [
   {
