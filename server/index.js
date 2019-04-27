@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const db = require('./db');
-console.log(db);
 const PORT = process.env.PORT || 3000;
 const app = express();
 const session = require('express-session');
