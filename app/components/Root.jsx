@@ -41,7 +41,7 @@ const Root = () => {
               path="/plants/:plantId/editPlant"
               component={EditPlant}
             />
-            <Route path="/plants/:plantId" component={SinglePlant} />
+            <Route path="/gallery/:plantId" component={SinglePlant} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/dashboard" component={Dashboard} />
             <Route path="/" component={LogIn} />

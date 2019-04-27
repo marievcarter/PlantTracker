@@ -74,7 +74,7 @@ export const updateDate = updatesObj => async dispatch => {
 // initial state plants
 const initialState = { plants: [], selectedPlant: {} };
 
-export default (plantReducer = (state = initialState, action) => {
+export default function(state = initialState, action) {
   switch (action.type) {
     case GOT_PLANTS_FROM_SERVER:
       return { ...state, plants: action.plants };
@@ -98,4 +98,4 @@ export default (plantReducer = (state = initialState, action) => {
     default:
       return state;
   }
-});
+}

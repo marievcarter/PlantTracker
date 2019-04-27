@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { fetchPlants, updateDate } from '../reducers/plant';
+import { fetchPlants, updateDate } from '../reducers';
 import { GalleryItem } from './index.js';
 import { withStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
@@ -24,8 +24,7 @@ class Gallery extends Component {
   }
 
   render() {
-    const { classes } = this.props;
-    let { plants } = this.props;
+    const { classes, plants } = this.props;
     return (
       <div>
         <NavLink to={'/plants/addPlant'}>
@@ -62,7 +61,7 @@ class Gallery extends Component {
 }
 
 const mapStateToProps = state => ({
-  plants: state.plants.plants,
+  plants: state.plantReducer.plants,
 });
 
 const mapDispatchToProps = dispatch => ({

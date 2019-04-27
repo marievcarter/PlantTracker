@@ -21,12 +21,10 @@ class SinglePlant extends Component {
       age,
       imageUrl,
       sunDirection,
-      lastFeeding,
-      lastRepot,
-      lastWatering,
       description,
       id,
     } = this.props.plant;
+    const { lastFeeding, lastRepot, lastWatering } = this.props;
     return (
       <div>
         <main className="flex-container">
@@ -71,7 +69,12 @@ class SinglePlant extends Component {
   }
 }
 
-const mapStateToProps = state => ({ plant: state.plants.selectedPlant });
+const mapStateToProps = state => ({
+  plant: state.plantReducer.selectedPlant,
+  lastFeeding: state.plantReducer.lastFeeding,
+  lastRepot: state.plantReducer.lastRepot,
+  lastWatering: state.plantReducer.lastWatering,
+});
 
 const mapDispatchToProps = dispatch => ({
   loadPlant: plantId => dispatch(fetchOnePlant(plantId)),

@@ -27,7 +27,7 @@ const GalleryItem = props => {
   return (
     <Card key={plant.id} className={classes.card}>
       <CardActionArea>
-        <NavLink to={`/plants/${plant.id}`}>
+        <NavLink to={`/gallery/${plant.id}`}>
           <CardMedia
             className={classes.media}
             image={plant.imageUrl}
@@ -36,7 +36,7 @@ const GalleryItem = props => {
         </NavLink>
       </CardActionArea>
       <CardContent className={classes.cardContent}>
-        <NavLink to={`/plants/${plant.id}`}>
+        <NavLink to={`/gallery/${plant.id}`}>
           <p className="link">{plant.commonName}</p>
         </NavLink>
         <div className="smallButtonContainer">
