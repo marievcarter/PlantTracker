@@ -21,7 +21,6 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // });
 
 const Root = props => {
-  console.log(props);
   const { isLoggedIn } = props;
   return (
     <React.Fragment>
