@@ -2,6 +2,21 @@ const db = require('./server/db');
 const { green, red } = require('chalk');
 const { Plant, User } = require('./server/db/models');
 
+const users = [
+  {
+    firstName: 'Marie',
+    lastName: 'Carter',
+    email: 'marievcarter@gmail.com',
+    password: 'password',
+  },
+  {
+    firstName: 'Guest',
+    lastName: 'User',
+    email: 'guest@email.com',
+    password: 'password',
+  },
+];
+
 const plants = [
   {
     commonName: 'Ponytail Palm',
@@ -161,12 +176,31 @@ const plants = [
 
 const seed = async () => {
   await db.sync({ force: true });
-
-  await Promise.all(plants.map(plant => Plant.create(plant))); //.then(
-
-  console.log(green('Seeding success!'));
-  db.close();
+  const [newUsers, newPlants] = await Promise.all([
+    User.bulkCreate(users, { returning: true, individualHooks: true }),
+    Plant.bulkCreate(plants, { returning: true, individualHooks: true }),
+  ]);
+  const [defaultUser] = newUsers;
+  await Promise.all(
+    newPlants.map(plant => {
+      plant.setUser(defaultUser);
+    })
+  );
 };
+
+async function runSeed() {
+  console.log('seeding....');
+  try {
+    await seed();
+  } catch (err) {
+    console.error(err);
+    process.exitCode = 1;
+  } finally {
+    console.log('closing db connection');
+    await db.close();
+    console.log('db connection closed');
+  }
+}
 
 seed().catch(err => {
   console.error(red('Something went wrong!'));

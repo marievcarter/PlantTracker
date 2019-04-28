@@ -1,12 +1,25 @@
 'use strict';
-
 const express = require('express');
 const path = require('path');
 const morgan = require('morgan');
 const db = require('./db');
-console.log(db);
 const PORT = process.env.PORT || 3000;
 const app = express();
+const session = require('express-session');
+const passport = require('passport');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sessionStore = new SequelizeStore({ db });
+
+// passport registration
+passport.serializeUser((user, done) => done(null, user.id));
+passport.deserializeUser(async (id, done) => {
+  try {
+    const user = await db.models.user.findByPk(id);
+    done(null, user);
+  } catch (err) {
+    done(err);
+  }
+});
 
 // logging middleware
 app.use(morgan('dev'));
@@ -18,8 +31,32 @@ app.use(express.urlencoded({ extended: true }));
 // static middleware
 app.use(express.static(path.join(__dirname, '../public')));
 
-// location of routes
+// session middleware with passport
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'my best friend is Cody',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+// auth and api routes
+app.use('/auth', require('./auth'));
 app.use('/api', require('./api'));
+
+// 404
+app.use((req, res, next) => {
+  if (path.extname(req.path).length) {
+    const err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+  } else {
+    next();
+  }
+});
 
 // send basic index.html for any request
 app.get('*', (req, res) => {

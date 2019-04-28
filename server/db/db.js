@@ -13,6 +13,7 @@ let db = new Sequelize(dbUrl, {
     useUTC: false,
   },
   timezone: '-05:00',
+  logging: false,
 });
 
 module.exports = db;

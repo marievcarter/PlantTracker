@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchPlants, createNewPlant } from '../reducers/plantReducer';
+import { fetchPlants, createNewPlant } from '../reducers/plant';
 
 class AddPlant extends Component {
   constructor() {
