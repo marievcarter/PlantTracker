@@ -32,7 +32,7 @@ class Gallery extends Component {
         </NavLink>
         <Grid container justify="center" className={classes.root} spacing={24}>
           {plants.map(plant => (
-            <Grid key={plant.id} item xs={40}>
+            <Grid key={plant.id} item xs={4}>
               <GalleryItem
                 key={plant.id}
                 plant={plant}

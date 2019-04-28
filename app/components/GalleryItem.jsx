@@ -4,21 +4,29 @@ import { NavLink } from 'react-router-dom';
 import { withStyles } from '@material-ui/styles';
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
+// import { shadows } from '@material-ui/system';
 import Typography from '@material-ui/core/Typography';
+// import muli from 'typeface-muli';
 
 const styles = {
   card: {
     maxWidth: 400,
+    borderRadius: 1,
+    boxShadow: '0 1px 1px 0 rgba(0, 0, 0, .2)',
   },
   media: {
     height: 150,
   },
   cardContent: {
     width: 200,
+  },
+  title: {
+    textDecoration: 'none',
+    color: '#3c7656',
+    margin: '0 0 10px 0',
+    fontsize: 20,
   },
 };
 
@@ -36,10 +44,10 @@ const GalleryItem = props => {
         </NavLink>
       </CardActionArea>
       <CardContent className={classes.cardContent}>
-        <NavLink to={`/gallery/${plant.id}`}>
-          <p className="link">{plant.commonName}</p>
+        <NavLink className={classes.title} to={`/gallery/${plant.id}`}>
+          <p className={classes.title}>{plant.commonName}</p>
         </NavLink>
-        <div className="smallButtonContainer">
+        <div>
           <img
             onClick={setWaterDate}
             className="smallButton"
