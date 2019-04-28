@@ -1,4 +1,5 @@
 import axios from 'axios';
+import history from '../history';
 
 // Action Types
 const GET_USER = 'GET_USER';
@@ -43,7 +44,7 @@ export const auth = (
 
   try {
     dispatch(getUser(res.data));
-    history.goBack();
+    // history.goBack();
     if (history.location.pathname === '/login') {
       history.push('/');
     }

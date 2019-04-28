@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { NavLink, withRouter } from 'react-router-dom';
-// import PropTypes from 'prop-types'
-import { auth } from '../store';
+import { auth } from '../reducers';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import FormControl from '@material-ui/core/FormControl';
@@ -11,6 +10,7 @@ import InputLabel from '@material-ui/core/InputLabel';
 import Paper from '@material-ui/core/Paper';
 import Typography from '@material-ui/core/Typography';
 import withStyles from '@material-ui/core/styles/withStyles';
+import history from '../history';
 
 /**
  * COMPONENT
@@ -54,112 +54,76 @@ const styles = theme => ({
   },
 });
 
-const LogIn = props => {
-  const { name, displayName, handleSubmit, error, classes } = props;
-  return (
-    <div className="login-new">
-      <main className={classes.main}>
-        <CssBaseline />
-        <Paper className={classes.paper}>
-          <Typography component="h1" variant="h5" className={classes.center}>
-            Login
-          </Typography>
-          <form className={classes.form}>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">Email Address</InputLabel>
-              <Input id="email" name="email" autoComplete="email" autoFocus />
-            </FormControl>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="password">Password</InputLabel>
-              <Input
-                name="password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </FormControl>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
+class LogIn extends Component {
+  constructor() {
+    super();
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+  async handleSubmit(evt) {
+    evt.preventDefault();
+    const email = evt.target.email.value;
+    const password = evt.target.password.value;
+    await this.props.login(null, null, email, password, 'login');
+  }
+  render() {
+    const { error, classes } = this.props;
+    return (
+      <div className="login-new">
+        <main className={classes.main}>
+          <CssBaseline />
+          <Paper className={classes.paper}>
+            <Typography component="h1" variant="h5" className={classes.center}>
               Login
-            </Button>
-          </form>
-        </Paper>
-      </main>
-      {/* <main className={classes.main}>
-        <CssBaseline />
-        <Paper className={classes.paper}>
-          <Typography component="h1" variant="h5" className={classes.center}>
-            Login
-          </Typography>
-          <form className={classes.form} onSubmit={props.handleSubmit}>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="email">Email Address</InputLabel>
-              <Input id="email" name="email" autoComplete="email" autoFocus />
-            </FormControl>
-            <FormControl margin="normal" required fullWidth>
-              <InputLabel htmlFor="password">Password</InputLabel>
-              <Input
-                name="password"
-                type="password"
-                id="password"
-                autoComplete="current-password"
-              />
-            </FormControl>
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              className={classes.submit}
-            >
-              Login
-            </Button>
-            {error && error.response && (
-              <div className="form-error"> {error.response.data} </div>
-            )}
-          </form>
-        </Paper>
-      </main> */}
-    </div>
-  );
+            </Typography>
+            <form className={classes.form} onSubmit={this.handleSubmit}>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="email">Email Address</InputLabel>
+                <Input id="email" name="email" autoComplete="email" autoFocus />
+              </FormControl>
+              <FormControl margin="normal" required fullWidth>
+                <InputLabel htmlFor="password">Password</InputLabel>
+                <Input
+                  name="password"
+                  type="password"
+                  id="password"
+                  autoComplete="current-password"
+                />
+              </FormControl>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                className={classes.submit}
+              >
+                Login
+              </Button>
+              {error && error.response && (
+                <div className="form-error"> {error.response.data} </div>
+              )}
+            </form>
+          </Paper>
+        </main>
+      </div>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {
+    error: state.userReducer.error,
+  };
 };
 
-// const mapLogin = state => {
-//   return {
-//     name: 'login',
-//     displayName: 'Login',
-//     error: state.user.error,
-//   };
-// };
+const mapDispatchToProps = dispatch => {
+  return {
+    login: (firstName, lastName, email, password, method) =>
+      dispatch(auth(firstName, lastName, email, password, method)),
+  };
+};
 
-// const mapDispatch = dispatch => {
-//   return {
-//     handleSubmit(evt) {
-//       console.log(evt.target.email.value, 'emailevalue from login');
-//       evt.preventDefault();
-//       const email = evt.target.email.value;
-//       const password = evt.target.password.value;
-//       dispatch(auth(null, null, email, password, 'login'));
-//     },
-//   };
-// };
-
-// export default connect(
-//   mapLogin,
-//   mapDispatch
-// )(withStyles(styles)(LogIn));
-
-export default withRouter(withStyles(styles)(LogIn));
-
-// /**
-//  * PROP TYPES
-//  */
-// LogInForm.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   displayName: PropTypes.string.isRequired,
-//   handleSubmit: PropTypes.func.isRequired,
-//   error: PropTypes.object
-// }
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(withStyles(styles)(LogIn))
+);

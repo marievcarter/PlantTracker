@@ -7,12 +7,14 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 const session = require('express-session');
 const passport = require('passport');
+const SequelizeStore = require('connect-session-sequelize')(session.Store);
+const sessionStore = new SequelizeStore({ db });
 
 // passport registration
 passport.serializeUser((user, done) => done(null, user.id));
 passport.deserializeUser(async (id, done) => {
   try {
-    const user = await db.models.user.findById(id);
+    const user = await db.models.user.findByPk(id);
     done(null, user);
   } catch (err) {
     done(err);
@@ -28,6 +30,18 @@ app.use(express.urlencoded({ extended: true }));
 
 // static middleware
 app.use(express.static(path.join(__dirname, '../public')));
+
+// session middleware with passport
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET || 'my best friend is Cody',
+    store: sessionStore,
+    resave: false,
+    saveUninitialized: false,
+  })
+);
+app.use(passport.initialize());
+app.use(passport.session());
 
 // auth and api routes
 app.use('/auth', require('./auth'));
