@@ -2,6 +2,32 @@ import React, { Component } from 'react';
 import { NavLink, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchOnePlant, deletePlant } from '../reducers/plant';
+import { withStyles } from '@material-ui/styles';
+import Card from '@material-ui/core/Card';
+import CardMedia from '@material-ui/core/CardMedia';
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+
+const styles = {
+  card: {
+    maxWidth: '40%',
+    borderRadius: 0,
+    boxShadow: '0 1px 1px 0 rgba(0, 0, 0, .2)',
+    padding: 10,
+    margin: '50px 0 30px 0',
+  },
+  media: {
+    height: 350,
+    width: 350,
+  },
+  root: {
+    flexGrow: 1,
+  },
+  button: {
+    textDecoration: 'none',
+    color: 'green',
+  },
+};
 
 class SinglePlant extends Component {
   componentDidMount() {
@@ -23,47 +49,62 @@ class SinglePlant extends Component {
       sunDirection,
       description,
       id,
+      lastFeeding,
+      lastRepot,
+      lastWatering,
     } = this.props.plant;
-    const { lastFeeding, lastRepot, lastWatering } = this.props;
+    const { classes } = this.props;
     return (
       <div>
-        <main className="flex-container">
-          <div className="flex-container-items">
-            <div>
-              <h2>{commonName}</h2>
-              <img className="profile-pic" src={imageUrl} />
-              <p>
-                <b>Scientific Name: </b>
-                {scientificName}
-              </p>
-              <p>
-                <b>Age: </b>
-                {`${age} years`}
-              </p>
-              <p>
-                <b>Sun Exposure: </b>
-                {sunDirection}
-              </p>
-              <p>
-                <b>Last Watering: </b>
-                {lastWatering ? lastWatering.slice(0, 10) : null}
-              </p>
-              <p>
-                <b>Last Feeding: </b>
-                {lastFeeding ? lastFeeding.slice(0, 10) : null}
-              </p>
-              <p>
-                <b>Last Repot: </b>
-                {lastRepot ? lastRepot.slice(0, 10) : null}
-              </p>
-              <p>{description}</p>
-            </div>
-            <NavLink to={`/plants/${id}/editPlant`}>
-              <button>Edit</button>
-            </NavLink>
-            <button onClick={this.handleDelete.bind(this, id)}>Delete</button>
-          </div>
-        </main>
+        <Grid container justify="center" className={classes.root} spacing={24}>
+          <Card className={classes.card}>
+            <h2>{commonName}</h2>
+            {/* <CardActionArea> */}
+            <CardMedia className={classes.media} image={imageUrl} />
+            {/* </CardActionArea> */}
+          </Card>
+          <Card className={classes.card}>
+            <p>
+              <b>Scientific Name: </b>
+              {scientificName}
+            </p>
+            <p>
+              <b>Age: </b>
+              {`${age} years`}
+            </p>
+            <p>
+              <b>Sun Exposure: </b>
+              {sunDirection}
+            </p>
+            <p>
+              <b>Last Watering: </b>
+              {lastWatering ? lastWatering.slice(0, 10) : null}
+            </p>
+            <p>
+              <b>Last Feeding: </b>
+              {lastFeeding ? lastFeeding.slice(0, 10) : null}
+            </p>
+            <p>
+              <b>Last Repot: </b>
+              {lastRepot ? lastRepot.slice(0, 10) : null}
+            </p>
+            <p>{description}</p>
+          </Card>
+        </Grid>
+        <Grid container justify="center">
+          <NavLink className={classes.button} to={`/plants/${id}/editPlant`}>
+            <Button variant="outlined" className={classes.button}>
+              Edit
+            </Button>
+          </NavLink>
+          <Button
+            variant="outlined"
+            className={classes.button}
+            onClick={this.handleDelete.bind(this, id)}
+          >
+            Delete
+          </Button>
+        </Grid>
       </div>
     );
   }
@@ -85,5 +126,5 @@ export default withRouter(
   connect(
     mapStateToProps,
     mapDispatchToProps
-  )(SinglePlant)
+  )(withStyles(styles)(SinglePlant))
 );

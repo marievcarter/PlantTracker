@@ -39,7 +39,17 @@ const Root = props => {
         <main>
           <Switch>
             <Route path="/login" component={LogIn} />
-            {isLoggedIn && (
+            <Route exact path="/plants/addPlant" component={AddPlant} />
+            <Route
+              exact
+              path="/plants/:plantId/editPlant"
+              component={EditPlant}
+            />
+            <Route path="/gallery/:plantId" component={SinglePlant} />
+            <Route path="/gallery" component={Gallery} />
+            <Route path="/dashboard" component={Dashboard} />
+            <Route path="/" component={Gallery} />
+            {/* {isLoggedIn && (
               <Switch>
                 <Route exact path="/plants/addPlant" component={AddPlant} />
                 <Route
@@ -52,7 +62,7 @@ const Root = props => {
                 <Route path="/dashboard" component={Dashboard} />
                 <Route path="/" component={Gallery} />
               </Switch>
-            )}
+            )} */}
           </Switch>
         </main>
       </div>
