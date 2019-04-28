@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchOnePlant, updatePlant } from '../reducers/plant';
 
@@ -54,8 +54,6 @@ class EditPlant extends Component {
     this.props.loadPlant(plantId);
     this.props.history.push(`/plants/${plantId}`);
   }
-
-  // understand why refreshing causes selected plant data to be lost
   render() {
     return (
       <div>
@@ -141,7 +139,7 @@ class EditPlant extends Component {
   }
 }
 
-const mapStateToProps = state => ({ plant: state.plants.selectedPlant });
+const mapStateToProps = state => ({ plant: state.plantReducer.selectedPlant });
 
 const mapDispatchToProps = dispatch => ({
   updatePlant: (plantId, updates) => dispatch(updatePlant(plantId, updates)),

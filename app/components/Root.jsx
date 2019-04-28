@@ -42,7 +42,7 @@ const Root = props => {
             <Route exact path="/plants/addPlant" component={AddPlant} />
             <Route
               exact
-              path="/plants/:plantId/editPlant"
+              path="/gallery/:plantId/editPlant"
               component={EditPlant}
             />
             <Route path="/gallery/:plantId" component={SinglePlant} />
