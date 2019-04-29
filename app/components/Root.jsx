@@ -34,6 +34,9 @@ const Root = props => {
           <NavLink to={'/gallery'} className="navlink">
             GALLERY
           </NavLink>
+          <NavLink to={'/trends'} className="navlink">
+            TRENDS
+          </NavLink>
         </nav>
         <main>
           <Switch>
