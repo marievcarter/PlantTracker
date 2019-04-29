@@ -21,7 +21,6 @@ import { createMuiTheme } from '@material-ui/core/styles';
 // });
 
 const Root = props => {
-  console.log(props);
   const { isLoggedIn } = props;
   return (
     <React.Fragment>
@@ -42,7 +41,7 @@ const Root = props => {
             <Route exact path="/plants/addPlant" component={AddPlant} />
             <Route
               exact
-              path="/plants/:plantId/editPlant"
+              path="/gallery/:plantId/editPlant"
               component={EditPlant}
             />
             <Route path="/gallery/:plantId" component={SinglePlant} />

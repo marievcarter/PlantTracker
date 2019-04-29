@@ -59,9 +59,7 @@ class SinglePlant extends Component {
         <Grid container justify="center" className={classes.root} spacing={24}>
           <Card className={classes.card}>
             <h2>{commonName}</h2>
-            {/* <CardActionArea> */}
-            <CardMedia className={classes.media} image={imageUrl} />
-            {/* </CardActionArea> */}
+            <CardMedia image={imageUrl} className={classes.media} />
           </Card>
           <Card className={classes.card}>
             <p>
@@ -92,7 +90,7 @@ class SinglePlant extends Component {
           </Card>
         </Grid>
         <Grid container justify="center">
-          <NavLink className={classes.button} to={`/plants/${id}/editPlant`}>
+          <NavLink className={classes.button} to={`/gallery/${id}/editPlant`}>
             <Button variant="outlined" className={classes.button}>
               Edit
             </Button>
