@@ -1,6 +1,6 @@
 const db = require('./server/db');
 const { green, red } = require('chalk');
-const { Plant, User } = require('./server/db/models');
+const { Plant, User, Event } = require('./server/db/models');
 
 const users = [
   {
@@ -174,16 +174,66 @@ const plants = [
   },
 ];
 
+const events = [
+  {
+    type: 'water',
+    date: '2019-04-10 00:00:00',
+    comments: 'parched',
+  },
+  {
+    type: 'repot',
+    date: '2019-04-19 00:00:00',
+    comments: 'outgrew container',
+  },
+  {
+    type: 'fertilize',
+    date: '2019-04-12 00:00:00',
+    comments: 'yellowing leaves',
+  },
+  {
+    type: 'water',
+    date: '2019-04-22 00:00:00',
+    comments: '',
+  },
+  {
+    type: 'water',
+    date: '2019-04-25 00:00:00',
+    comments: 'parched',
+  },
+  {
+    type: 'repot',
+    date: '2019-05-01 00:00:00',
+    comments: 'outgrew container',
+  },
+  {
+    type: 'water',
+    date: '2019-04-11 00:00:00',
+    comments: 'parched',
+  },
+  {
+    type: 'repot',
+    date: '2019-04-19 00:00:00',
+    comments: 'outgrew container',
+  },
+];
+
 const seed = async () => {
   await db.sync({ force: true });
-  const [newUsers, newPlants] = await Promise.all([
+  const [newUsers, newPlants, newEvents] = await Promise.all([
     User.bulkCreate(users, { returning: true, individualHooks: true }),
     Plant.bulkCreate(plants, { returning: true, individualHooks: true }),
+    Event.bulkCreate(events, { returning: true, individualHooks: true }),
   ]);
-  const [defaultUser] = newUsers;
+  const [marie, guest] = newUsers;
+  const [testPlant] = newPlants;
   await Promise.all(
     newPlants.map(plant => {
-      plant.setUser(defaultUser);
+      plant.setUser(guest);
+    })
+  );
+  await Promise.all(
+    newEvents.map(event => {
+      event.setPlant(testPlant);
     })
   );
 };
