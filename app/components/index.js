@@ -6,3 +6,4 @@ export { default as Gallery } from './Gallery';
 export { default as SinglePlant } from './SinglePlant';
 export { default as GalleryItem } from './GalleryItem';
 export { default as LogIn } from './Login';
+export { default as Trends } from './Trends';

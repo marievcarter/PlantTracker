@@ -8,6 +8,7 @@ import {
   EditPlant,
   Dashboard,
   LogIn,
+  Trends,
 } from '../components';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { MuiThemeProvider } from '@material-ui/styles';
@@ -50,6 +51,7 @@ const Root = props => {
             <Route path="/gallery/:plantId" component={SinglePlant} />
             <Route path="/gallery" component={Gallery} />
             <Route path="/dashboard" component={Dashboard} />
+            <Route path="/trends" component={Trends} />
             <Route path="/" component={Gallery} />
             {/* {isLoggedIn && (
               <Switch>
